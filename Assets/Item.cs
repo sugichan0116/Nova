@@ -5,23 +5,40 @@ using UniRx;
 using System;
 using UniRx.Triggers;
 
-public class Item : BodyEffectableObject
+namespace Nova
 {
-    public override void OnApply(Body body)
+    public class Item : BodyEffectableObject
     {
-        Debug.Log("apvvvvpp");
+        private Rigidbody2D attachedRigidbody;
 
-        onDestroy.OnNext(Unit.Default);
-        return;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        onDestroy
-            .Subscribe(_ =>
+        public Rigidbody2D AttachedRigidbody {
+            get
             {
-                Destroy(gameObject);
-            });
+                if(attachedRigidbody == null)
+                {
+                    attachedRigidbody = GetComponent<Rigidbody2D>();
+                }
+
+                return attachedRigidbody;
+            }
+        }
+
+        public override void OnApply(Body body)
+        {
+            onDestroy.OnNext(Unit.Default);
+            return;
+        }
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            onDestroy
+                .Subscribe(_ =>
+                {
+                    Destroy(gameObject);
+                });
+        }
+
+
     }
 }

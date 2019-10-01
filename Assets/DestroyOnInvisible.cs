@@ -6,7 +6,7 @@ public class DestroyOnInvisible : MonoBehaviour
 {
     void OnBecameInvisible()
     {
-        Debug.Log($"[Destroy OnInvisible] {this}");
+        //Debug.Log($"[Destroy OnInvisible] {this}");
         Destroy(gameObject);
     }
 }

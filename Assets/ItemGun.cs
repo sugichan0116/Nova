@@ -5,24 +5,26 @@ using UniRx;
 using System;
 using UniRx.Triggers;
 
-public class ItemGun : Item
+namespace Nova
 {
-    public Gun gun;
-
-    public override void OnApply(Body body)
+    public class ItemGun : Item
     {
-        Debug.Log("appp");
-        onDestroy.OnNext(Unit.Default);
-        GunManager.Instance.EquipGun(gun);
-    }
+        public Gun gun;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        onDestroy
-            .Subscribe(_ =>
-            {
-                Destroy(gameObject);
-            });
+        public override void OnApply(Body body)
+        {
+            onDestroy.OnNext(Unit.Default);
+            GunManager.Instance.EquipGun(gun);
+        }
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            onDestroy
+                .Subscribe(_ =>
+                {
+                    Destroy(gameObject);
+                });
+        }
     }
 }

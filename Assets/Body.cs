@@ -8,13 +8,16 @@ using UniRx.Triggers;
 public class Body : MonoBehaviour
 {
     [SerializeField]
-    float health = 100;
+    private float health = 100;
+    private float residueHealth;
 
     public Subject<Unit> onDestroy = new Subject<Unit>();
 
     // Start is called before the first frame update
     void Start()
     {
+        residueHealth = health;
+
         this
             .OnTriggerEnter2DAsObservable()
             .Subscribe(collider =>
@@ -36,9 +39,19 @@ public class Body : MonoBehaviour
 
     public void ReceiveDamage(float damage)
     {
-        health -= damage;
+        residueHealth -= damage;
 
-        if (health <= 0)
+        if (residueHealth <= 0)
             onDestroy.OnNext(Unit.Default);
+    }
+
+    public string HealthText()
+    {
+        return $"{(int)residueHealth} / {(int)health}";
+    }
+
+    public float NormalizedHealth()
+    {
+        return residueHealth / health;
     }
 }

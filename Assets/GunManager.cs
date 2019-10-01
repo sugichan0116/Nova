@@ -55,7 +55,6 @@ public class GunManager : SingletonMonoBehaviour<GunManager>
 
     public void EquipGun(Gun gunPrefab)
     {
-        Debug.Log($"good");
         var slot = GetComponentsInChildren<GunSlot>()
             .Where(s => s.GetComponentInChildren<Gun>() == null)
             .FirstOrDefault();

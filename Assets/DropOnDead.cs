@@ -27,19 +27,10 @@ public class DropOnDead : MonoBehaviour
                     if (original == null) continue;
                     var obj = Instantiate(original, transform.position, transform.rotation);
 
-                    Diffusion(obj);
+                    Generator.Diffusion(obj);
                 }
             })
             .AddTo(this);
-    }
-
-    private void Diffusion(GameObject obj)
-    {
-        var rd = obj.GetComponent<Rigidbody2D>();
-        if (rd == null) return;
-
-        var rotate = Quaternion.Euler(0, 0, Random.Range(0, 360));
-        rd.velocity = rotate * Vector2.up * Random.Range(0, 10);
     }
 }
 

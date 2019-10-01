@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour
         Observable
             .Interval(TimeSpan.FromSeconds(1f / lotteryPerSecond))
             .Where(_ => lotteryResidue > 0)
-            .Where(_ => collider.IsTouching(player))
+            .Where(_ => player != null && collider.IsTouching(player))
             .Subscribe(_ => {
                 // Get a random point inside the bounds
                 var target = new Vector2(
