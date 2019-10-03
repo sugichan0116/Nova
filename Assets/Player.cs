@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Player : SingletonMonoBehaviour<Player>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Body body;
 
-    // Update is called once per frame
-    void Update()
+    public Body Body
     {
-        
+        get
+        {
+            body = body ?? GetComponent<Body>();
+
+            return body;
+        }
     }
 }

@@ -45,6 +45,14 @@ public class Body : MonoBehaviour
             onDestroy.OnNext(Unit.Default);
     }
 
+    public void RepairDamage(float volume)
+    {
+        residueHealth += volume;
+
+        if (residueHealth >= health)
+            residueHealth = health;
+    }
+
     public string HealthText()
     {
         return $"{(int)residueHealth} / {(int)health}";
