@@ -14,9 +14,11 @@ public abstract class BodyEffectableObject : MonoBehaviour
 
 public class Bullet : BodyEffectableObject
 {
-    private Rigidbody2D body;
+    [HideInInspector]
+    public Rigidbody2D body;
     public GameObject bomb;
     public float damage;
+    public Body target;
 
     public Rigidbody2D Rigidbody2D
     {

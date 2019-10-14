@@ -242,6 +242,7 @@ MonoBehaviour:
   searhArea: {fileID: 7369024949166369307}
   keepDistanceRadius: 4
   speed: 4
+  rotateSpeed: 0.1
   layer: 8
 --- !u!114 &-4260658788150001192
 MonoBehaviour:

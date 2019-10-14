@@ -10,6 +10,8 @@ public class Body : MonoBehaviour
     [SerializeField]
     private float health = 100;
     private float residueHealth;
+    [SerializeField]
+    private bool shouldDestroy = true;
 
     public Subject<Unit> onDestroy = new Subject<Unit>();
 
@@ -33,12 +35,14 @@ public class Body : MonoBehaviour
         onDestroy
             .Subscribe(_ =>
             {
-                Destroy(gameObject);
+                if(shouldDestroy) Destroy(gameObject);
             });
     }
 
     public void ReceiveDamage(float damage)
     {
+        if (residueHealth <= 0) return;
+
         residueHealth -= damage;
 
         if (residueHealth <= 0)
@@ -62,4 +66,6 @@ public class Body : MonoBehaviour
     {
         return residueHealth / health;
     }
+
+    public float LostHealth() => health - residueHealth;
 }

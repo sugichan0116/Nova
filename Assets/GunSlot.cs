@@ -4,15 +4,45 @@ using UnityEngine;
 
 public class GunSlot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Gun gun;
+    public bool isUnlocked;
+    public float needGem;
+
+    public Gun Gun
     {
-        
+        get
+        {
+            if (!isUnlocked) return null;
+
+            if (gun == null)
+            {
+                gun = GetComponentInChildren<Gun>();
+            }
+            return gun;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EquipGun(Gun gun)
     {
-        
+        if (!isUnlocked) return;
+
+        if (Gun != null)
+        {
+            Destroy(Gun.gameObject);
+        }
+
+        Instantiate(gun, gameObject.transform);
+    }
+
+    public void Unlock()
+    {
+        if(!isUnlocked)
+        {
+            if (InventoryManager.Instance.TryToPay(needGem))
+            {
+                isUnlocked = true;
+                CutInBox.Instance.Call("Unlocked", $"Equip slot is Unlocked!");
+            }
+        }
     }
 }

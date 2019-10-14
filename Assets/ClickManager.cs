@@ -6,6 +6,9 @@ public class ClickManager : SingletonMonoBehaviour<ClickManager>
 {
     public Window machineshop;
     public Window repair;
+    public Window market;
+    public Window develop;
+    public Window confirm_gunslot;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +18,8 @@ public class ClickManager : SingletonMonoBehaviour<ClickManager>
 
     public void ListenMessage(ClickMessage message)
     {
+        Debug.Log($"[Dispatch] {message}");
+
         switch(message)
         {
             case ClickMessage.AWAKE_MACHINESHOP:
@@ -23,13 +28,37 @@ public class ClickManager : SingletonMonoBehaviour<ClickManager>
             case ClickMessage.AWAKE_REPAIR:
                 repair.Open();
                 return;
+            case ClickMessage.AWAKE_MARKET:
+                market.Open();
+                return;
+            case ClickMessage.AWAKE_DEVELOP:
+                develop.Open();
+                return;
+            case ClickMessage.AWAKE_SLOT_UNLOCK:
+                confirm_gunslot.Open();
+                return;
             case ClickMessage.ACTION_REPAIR:
-                InventoryManager.Instance.money -= 300;
-                Player.Instance.Body.RepairDamage(500);
+                Repair();
+                return;
+            case ClickMessage.ACTION_UNLOCK_GUNSLOT:
+                GunManager.Instance.UnlockSlot();
                 return;
             default:
 
                 return;
+        }
+    }
+
+    //test gomi kuzu
+    public void Repair()
+    {
+        var body = Player.Instance.Body;
+        var needmoney = StoreManager.Instance.Dispatch(StateProps.MONEY_TO_REPAIR);
+        var inventory = InventoryManager.Instance;
+        
+        if(inventory.TryToPay(needmoney))
+        {
+            body.RepairDamage(body.LostHealth());
         }
     }
 }

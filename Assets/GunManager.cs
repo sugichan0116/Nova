@@ -52,16 +52,37 @@ public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBe
 public class GunManager : SingletonMonoBehaviour<GunManager>
 {
     public Subject<Unit> onEquiped = new Subject<Unit>();
+    public GunSlot selectedSlot;
 
     public void EquipGun(Gun gunPrefab)
     {
         var slot = GetComponentsInChildren<GunSlot>()
-            .Where(s => s.GetComponentInChildren<Gun>() == null)
+            .Where(s => s.Gun == null)
             .FirstOrDefault();
 
         if (slot == null) return;
 
-        Instantiate(gunPrefab, slot.gameObject.transform);
+        EquipGunToSlot(gunPrefab, slot);
+    }
+
+    public void EquipGunToSelectedSlot(Gun gun)
+    {
+        EquipGunToSlot(gun, selectedSlot);
+    }
+
+    private void EquipGunToSlot(Gun gun, GunSlot slot)
+    {
+        slot.EquipGun(gun);
         onEquiped.OnNext(Unit.Default);
+    }
+
+    public void UnlockSlot()
+    {
+        if(InventoryManager.Instance.TryToPay(selectedSlot.needGem))
+        {
+            selectedSlot.isUnlocked = true;
+            CutInBox.Instance.Call("Unlock", "New Weapon Slot!");
+            onEquiped.OnNext(Unit.Default);
+        }
     }
 }

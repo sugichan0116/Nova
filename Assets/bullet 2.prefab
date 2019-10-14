@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300118, guid: 4f3d817ad821bc345b488255f0de8318, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.4764151, b: 0.4764151, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -157,8 +157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a5db2f715163042b688b1d37fa74ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 0}
   bomb: {fileID: 9137452946725288066, guid: 74931f54a69a50740a80515238e8c3a2, type: 3}
-  damage: 25
+  damage: 21
+  target: {fileID: 0}
 --- !u!96 &-4256655600788450298
 TrailRenderer:
   serializedVersion: 2
@@ -277,3 +279,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 1
+  IsOnlyInactive: 0

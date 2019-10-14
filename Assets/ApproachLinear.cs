@@ -49,6 +49,8 @@ public class ApproachLinear : MonoBehaviour
     [SerializeField]
     private float speed = 4f;
     [SerializeField]
+    private float rotateSpeed = 0.01f;
+    [SerializeField]
     private DefinedLayer layer;
     private State state;
 
@@ -68,11 +70,15 @@ public class ApproachLinear : MonoBehaviour
                 //Debug.Log($"[ApproachLinear] target:{target}, me:{searhArea}");
                 var distance = target.position - transform.position;
                 var velocity = Vector2.zero;
+                var direction = transform.rotation * 
+                Vector3.up * speed;
 
                 if (distance.magnitude > keepDistanceRadius)
                 {
                     //Debug.Log($"[Keep distance] {distance.magnitude} > {keepDistanceRadius}");
-                    velocity = distance.normalized * speed;
+                    var r = Vector3.Cross(distance, direction).z;
+                    //body.AddTorque(100f * );
+                    velocity = Quaternion.Euler(0, 0, -rotateSpeed * r) * direction;//distance.normalized * speed;
                 }
 
                 body.velocity = velocity;

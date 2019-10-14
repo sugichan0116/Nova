@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 12
+  angleOfVisibility: 360
 --- !u!1001 &8170641147577493993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66,7 +67,7 @@ PrefabInstance:
         type: 3}
       propertyPath: prefab
       value: 
-      objectReference: {fileID: 8454249386364349244, guid: 1f0a6177eaa9de241948b61b9458f631,
+      objectReference: {fileID: 8454249386364349244, guid: 06a7019d23cbb464b9131cb914a4c2a2,
         type: 3}
     - target: {fileID: 2781367249095684464, guid: b4c8dd96182e182408591d067fcc200b,
         type: 3}

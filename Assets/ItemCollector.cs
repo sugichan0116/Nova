@@ -21,7 +21,7 @@ namespace Nova
                 .Where(item => item != null)
                 .Subscribe(item =>
                 {
-                    Debug.Log($"[Item Collector] {item}");
+                    //Debug.Log($"[Item Collector] {item}");
                     var body = item.AttachedRigidbody;
                     var direction = -(body.transform.position - transform.position);
                     body.velocity = (Vector2)direction * (4f) + player.velocity;
