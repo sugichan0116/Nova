@@ -4,13 +4,16 @@ using UnityEngine;
 using NaughtyAttributes;
 using TMPro;
 using UnityEngine.UI;
+using System.Linq;
 
 public class SkillSlot : MonoBehaviour
 {
-    public string gunName;
-    public Gun gun;
-    public bool IsDeveloped;
-    public float needGem;
+    [SerializeField]
+    private Skill skill;
+    [SerializeField]
+    private bool isUnlocked;
+    [SerializeField]
+    private List<SkillSlot> inheritance;
 
     [Header("Objects")]
     public Image image;
@@ -18,34 +21,47 @@ public class SkillSlot : MonoBehaviour
     public GameObject mask;
     public TextMeshProUGUI gemText;
 
+    public bool CanUnlock { get => inheritance.Count == 0 || inheritance.All(s => s.IsUnlocked); }
+    public bool IsUnlocked { get => isUnlocked; }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Reflect();
+    }
+
+    public void Unlock()
+    {
+        if(!CanUnlock) MessageLog.Print("Error");
+        if (IsUnlocked) MessageLog.Print("Unlocked!");
+
+        if (CanUnlock && !IsUnlocked)
+        {
+            if (InventoryManager.Instance.TryToPay(skill.gem))
+            {
+                isUnlocked = true;
+                mask.SetActive(!IsUnlocked);
+                AchievementBox.Print("Unlocked", $"{skill.skillName} is on Active!");
+            } else MessageLog.Print("Gem required!!");
+        }
     }
 
     public void Equip()
     {
-        if(!IsDeveloped)
+        if(skill is GunSkill gunSkill)
         {
-            if(InventoryManager.Instance.TryToPay(needGem))
-            {
-                IsDeveloped = true;
-                mask.SetActive(!IsDeveloped);
-                CutInBox.Instance.Call("Unlocked", $"{gunName} is on Active!");
-            }
+            GunManager.Instance.EquipGunToSelectedSlot(gunSkill.gun);
         }
-        GunManager.Instance.EquipGunToSelectedSlot(gun);
     }
 
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
     [Button]
     private void Reflect()
     {
-        text.text = gunName;
-        image.sprite = gun.Icon();
-        mask.SetActive(!IsDeveloped);
-        gemText.text = $"{needGem}";
+        text.text = skill.skillName;
+        image.sprite = skill.Icon();
+        mask.SetActive(!IsUnlocked);
+        gemText.text = $"{skill.gem}";
     }
-#endif
+//#endif
 }

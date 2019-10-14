@@ -7,12 +7,17 @@ using UniRx;
 using UniRx.Triggers;
 using System;
 
-public class CutInBox : SingletonMonoBehaviour<CutInBox>
+public class AchievementBox : SingletonMonoBehaviour<AchievementBox>
 {
     public GameObject box;
     public TextMeshProUGUI subText, text;
     
-    public void Call(string sub, string main)
+    public static void Print(string sub, string main)
+    {
+        Instance.Call(sub, main);
+    }
+
+    private void Call(string sub, string main)
     {
         box.SetActive(true);
         subText.text = sub;

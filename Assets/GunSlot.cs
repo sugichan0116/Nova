@@ -41,7 +41,7 @@ public class GunSlot : MonoBehaviour
             if (InventoryManager.Instance.TryToPay(needGem))
             {
                 isUnlocked = true;
-                CutInBox.Instance.Call("Unlocked", $"Equip slot is Unlocked!");
+                AchievementBox.Print("Unlock", $"Equip slot is Unlocked!");
             }
         }
     }

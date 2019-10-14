@@ -81,7 +81,7 @@ public class GunManager : SingletonMonoBehaviour<GunManager>
         if(InventoryManager.Instance.TryToPay(selectedSlot.needGem))
         {
             selectedSlot.isUnlocked = true;
-            CutInBox.Instance.Call("Unlock", "New Weapon Slot!");
+            AchievementBox.Print("Unlock", "New Weapon Slot!");
             onEquiped.OnNext(Unit.Default);
         }
     }
