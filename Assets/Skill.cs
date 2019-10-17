@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Skill : ScriptableObject
 {
     public string skillName;
@@ -11,17 +12,5 @@ public class Skill : ScriptableObject
     public virtual Sprite Icon()
     {
         return icon;
-    }
-}
-
-[CreateAssetMenu]
-public class GunSkill : Skill
-{
-    public Gun gun;
-
-    public override Sprite Icon()
-    {
-        Debug.Log($"[GunSkill] icon");
-        return gun.Icon();
     }
 }

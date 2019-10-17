@@ -8,7 +8,7 @@
 ///
 /// Remember that the colors are applied per-vertex so if you have multiple points on your gradient where the color changes and there aren't enough vertices, you won't see all of the colors.
 /// </summary>
-namespace UnityEngine.UI
+namespace UnityEngine.UI.My
 {
     [AddComponentMenu("UI/Effects/Gradient")]
     public class Gradient : BaseMeshEffect

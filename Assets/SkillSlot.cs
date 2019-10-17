@@ -51,6 +51,7 @@ public class SkillSlot : MonoBehaviour
         if(skill is GunSkill gunSkill)
         {
             GunManager.Instance.EquipGunToSelectedSlot(gunSkill.gun);
+            MessageLog.Print($"[Equiped] {gunSkill.skillName}");
         }
     }
 
