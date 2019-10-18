@@ -52,6 +52,7 @@ public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBe
 public class GunManager : SingletonMonoBehaviour<GunManager>
 {
     public Subject<Unit> onEquiped = new Subject<Unit>();
+    [HideInInspector]
     public GunSlot selectedSlot;
 
     public void EquipGun(Gun gunPrefab)
@@ -78,7 +79,7 @@ public class GunManager : SingletonMonoBehaviour<GunManager>
 
     public void UnlockSlot()
     {
-        if(InventoryManager.Instance.TryToPay(selectedSlot.needGem))
+        if (InventoryManager.Instance.TryToPay(selectedSlot.needGem))
         {
             selectedSlot.isUnlocked = true;
             AchievementBox.Print("Unlock", "New Weapon Slot!");

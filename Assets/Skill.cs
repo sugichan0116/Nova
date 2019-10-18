@@ -13,4 +13,21 @@ public class Skill : ScriptableObject
     {
         return icon;
     }
+
+    public virtual string ToDescription()
+    {
+        return "this is skill description\n" +
+            "\n" +
+            $"Gem : {gem}";
+    }
+
+    public virtual string ToTips()
+    {
+        return "[Tips]";
+    }
+
+    public string Indent(string text)
+    {
+        return $"<size=80%>--{text}</size>";
+    }
 }

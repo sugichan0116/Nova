@@ -15,4 +15,16 @@ public class Player : SingletonMonoBehaviour<Player>
             return body;
         }
     }
+
+    private PlayerApplySkill skill;
+
+    public PlayerApplySkill ApplySkill
+    {
+        get
+        {
+            skill = skill ?? GetComponent<PlayerApplySkill>();
+
+            return skill;
+        }
+    }
 }

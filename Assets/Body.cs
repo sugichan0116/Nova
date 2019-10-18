@@ -57,6 +57,12 @@ public class Body : MonoBehaviour
             residueHealth = health;
     }
 
+    public void ImproveHealth(float volume)
+    {
+        health += volume;
+        residueHealth += volume;
+    }
+
     public string HealthText()
     {
         return $"{(int)residueHealth} / {(int)health}";

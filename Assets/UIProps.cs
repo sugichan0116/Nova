@@ -30,4 +30,5 @@ public enum StateProps
     MONEY_HAVING,
     MONEY_TO_REPAIR,
     MONEY_TO_UNLOCK_GUNSLOT,
+    PLAYER_MOVE_SPEED,
 }

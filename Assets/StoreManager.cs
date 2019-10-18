@@ -20,6 +20,8 @@ public class StoreManager : SingletonMonoBehaviour<StoreManager>
                 return (int)(Player.Instance.Body.LostHealth() * 2.5f);
             case StateProps.MONEY_TO_UNLOCK_GUNSLOT:
                 return GunManager.Instance.selectedSlot.needGem;
+            case StateProps.PLAYER_MOVE_SPEED:
+                return Player.Instance.GetComponent<MoveByInput>().speed;
             default:
                 return 0;
         }

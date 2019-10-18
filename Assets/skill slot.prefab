@@ -348,7 +348,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6170993051532713332}
-        m_MethodName: Equip
+        m_MethodName: Apply
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -499,6 +499,7 @@ GameObject:
   - component: {fileID: 6170993051532713334}
   - component: {fileID: 6170993051532713333}
   - component: {fileID: 6170993051532713332}
+  - component: {fileID: 7744118397671159603}
   m_Layer: 5
   m_Name: skill slot
   m_TagString: Untagged
@@ -554,6 +555,20 @@ MonoBehaviour:
   text: {fileID: 6170993052218785512}
   mask: {fileID: 6170993051409746873}
   gemText: {fileID: 6170993050913179506}
+--- !u!114 &7744118397671159603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6170993051532713335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfee45673e7d228428f9f01a772b39d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 6170993051217597513}
+  slot: {fileID: 6170993051532713332}
 --- !u!1 &6170993052189901999
 GameObject:
   m_ObjectHideFlags: 0

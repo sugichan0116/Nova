@@ -37,6 +37,8 @@ public class ClickManager : SingletonMonoBehaviour<ClickManager>
             case ClickMessage.AWAKE_SLOT_UNLOCK:
                 confirm_gunslot.Open();
                 return;
+
+
             case ClickMessage.ACTION_REPAIR:
                 Repair();
                 return;
@@ -55,10 +57,11 @@ public class ClickManager : SingletonMonoBehaviour<ClickManager>
         var body = Player.Instance.Body;
         var needmoney = StoreManager.Instance.Dispatch(StateProps.MONEY_TO_REPAIR);
         var inventory = InventoryManager.Instance;
-        
-        if(inventory.TryToPay(needmoney))
+
+        if (inventory.TryToPay(needmoney))
         {
             body.RepairDamage(body.LostHealth());
         }
+        else MessageLog.Print("[Error] Lack of Gem...");
     }
 }
