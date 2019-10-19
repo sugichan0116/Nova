@@ -45,8 +45,21 @@ public class ClickManager : SingletonMonoBehaviour<ClickManager>
             case ClickMessage.ACTION_UNLOCK_GUNSLOT:
                 GunManager.Instance.UnlockSlot();
                 return;
-            default:
 
+            case ClickMessage.ACTION_MARKET_DEAL_1:
+                MarketField.Instance.dealWith = 1;
+                return;
+            case ClickMessage.ACTION_MARKET_DEAL_10:
+                MarketField.Instance.dealWith = 10;
+                return;
+            case ClickMessage.ACTION_MARKET_DEAL_100:
+                MarketField.Instance.dealWith = 100;
+                return;
+            case ClickMessage.ACTION_MARKET_DEAL_1000:
+                MarketField.Instance.dealWith = 1000;
+                return;
+
+            default:
                 return;
         }
     }
@@ -55,7 +68,7 @@ public class ClickManager : SingletonMonoBehaviour<ClickManager>
     public void Repair()
     {
         var body = Player.Instance.Body;
-        var needmoney = StoreManager.Instance.Dispatch(StateProps.MONEY_TO_REPAIR);
+        var needmoney = StoreManager.Instance.Get(StateProps.MONEY_TO_REPAIR);
         var inventory = InventoryManager.Instance;
 
         if (inventory.TryToPay(needmoney))

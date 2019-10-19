@@ -10,18 +10,27 @@ public class StoreManager : SingletonMonoBehaviour<StoreManager>
         
     }
 
-    public float Dispatch(StateProps state)
+    public float Get(StateProps state)
     {
         switch(state)
         {
             case StateProps.MONEY_HAVING:
-                return InventoryManager.Instance.money;
+                return InventoryManager.Instance.Money;
             case StateProps.MONEY_TO_REPAIR:
                 return (int)(Player.Instance.Body.LostHealth() * 2.5f);
             case StateProps.MONEY_TO_UNLOCK_GUNSLOT:
                 return GunManager.Instance.selectedSlot.needGem;
+
             case StateProps.PLAYER_MOVE_SPEED:
                 return Player.Instance.GetComponent<MoveByInput>().speed;
+
+            //case StateProps.MARKET_NAME:
+            //    return MarketField.Instance.market.marketName;
+            case StateProps.MARKET_TAX:
+                return (int)MarketField.Instance.market.tax;
+            case StateProps.MARKET_DEAL_WITH:
+                return MarketField.Instance.dealWith;
+
             default:
                 return 0;
         }

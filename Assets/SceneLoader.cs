@@ -51,6 +51,6 @@ public class ResourcesFactory
     public static T Instantiate<T>(string path, Transform transform) where T : MonoBehaviour
     {
         var obj = (GameObject)Resources.Load(path);
-        return Object.Instantiate(obj.GetComponent<T>(), transform.parent);
+        return Object.Instantiate(obj.GetComponent<T>(), transform);
     }
 }

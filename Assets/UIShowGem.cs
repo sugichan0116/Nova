@@ -16,7 +16,7 @@ public class UIShowGem : MonoBehaviour
         this.UpdateAsObservable()
             .Subscribe(_ =>
             {
-                text.text = $"{a.money}";
+                text.text = $"{a.Money}";
             });
     }
 }

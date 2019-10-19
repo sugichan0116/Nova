@@ -9,7 +9,7 @@ public class SpeedSkill : Skill
 
     public override string ToDescription()
     {
-        var now = StoreManager.Instance.Dispatch(StateProps.PLAYER_MOVE_SPEED);
+        var now = StoreManager.Instance.Get(StateProps.PLAYER_MOVE_SPEED);
 
         return $"Gem {gem}\n" +
             $"Move_Speed +{speed}km/sec\n" +
