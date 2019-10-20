@@ -11,9 +11,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6220b65b19e7e314c94644773abc686d, type: 3}
   m_Name: Gun Skill 1
-  m_EditorClassIdentifier:
-  skillName: Missile
-  gem: 5000
+  m_EditorClassIdentifier: 
+  skillName: Hydrogen Laser
+  gem: 3000
   icon: {fileID: 0}
-  gun: {fileID: 3792639052561062060, guid: 87605315eac899e4592b323380502d3e, type: 3}
-  tips: Long range attack
+  gun: {fileID: 3792639052561062060, guid: 93f3044d4e460f148bcf2380f3077a7d, type: 3}
+  tips: "\rHigh destructive power"

@@ -16,30 +16,22 @@ public class SkillPopup : MonoBehaviour
     {
         Window popup = null;
 
-        //var button = GetComponent<Button>();
-        //bool isOpening = false;
-
         button.OnPointerEnterAsObservable()
             .Subscribe(_ =>
             {
-                Debug.Log($"[Popup] mouse enter");
-                popup = popup ?? ResourcesFactory.Instantiate<Window>("skill popup", transform.parent);
+                //Debug.Log($"[Popup] mouse enter");
+                if(popup == null)
+                {
+                    var canvas = GetComponentInParent<Canvas>().transform;
+                    popup = ResourcesFactory.Instantiate<Window>("skill popup", canvas);
+                }
 
                 popup.Open();
                 popup.GetComponent<UISkillData>().slot = slot;
 
-                //isOpening = true;
-                //Observable
-                //    .Timer(TimeSpan.FromSeconds(1))
-                //    .Subscribe(__ =>
-                //    {
-                //        isOpening = false;
-                //    })
-                //    .AddTo(this);
             });
 
         button.OnPointerExitAsObservable()
-            //.Where(_ => !isOpening)
             .Subscribe(_ =>
             {
                 popup.Close();

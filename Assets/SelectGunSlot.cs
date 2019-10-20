@@ -10,14 +10,19 @@ public class SelectGunSlot : MonoBehaviour
     public Image icon;
     public GameObject mask;
 
-    private void Start()
+    //private void Start()
+    //{
+    //    SetImage();
+
+    //    GunManager.Instance
+    //        .onEquiped
+    //        .Subscribe(_ => { SetImage(); })
+    //        .AddTo(this);
+    //}
+
+    private void Update()
     {
         SetImage();
-
-        GunManager.Instance
-            .onEquiped
-            .Subscribe(_ => { SetImage(); })
-            .AddTo(this);
     }
 
     public void SelectSlot()
@@ -27,7 +32,7 @@ public class SelectGunSlot : MonoBehaviour
 
     private void SetImage()
     {
-        Debug.Log($"[Select Slot] update {this}");
+        //Debug.Log($"[Select Slot] update {this}");
         icon.sprite = slot.Gun?.Icon();
         icon.gameObject.SetActive(slot.Gun != null);
         mask.SetActive(!slot.isUnlocked);

@@ -6,6 +6,7 @@ using System.Linq;
 
 public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
 {
+    [SerializeField]
     private float money;
     [SerializeField]
     private List<HoldingProduct> items = new List<HoldingProduct>();

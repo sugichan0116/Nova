@@ -25,8 +25,14 @@ public class ShootByClose : MonoBehaviour
                 {
                     foreach (var gun in guns)
                     {
-                        gun.target = Player.Instance.Body;
-                        gun.onShoot.OnNext(target - transform.position);
+                        var point = new GunTarget()
+                        {
+                            direction = target - transform.position,
+                            target = Player.Instance.Body,
+                            relativeSpeed = Vector2.zero
+                        };
+
+                        gun.onShoot.OnNext(point);
                     }
                 }
             })

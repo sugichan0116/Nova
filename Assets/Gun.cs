@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
-
+using System;
 
 public class Gun : MonoBehaviour
 {
@@ -10,8 +10,7 @@ public class Gun : MonoBehaviour
     private Bullet prefab;
     public float speed;
     public int frame;
-    public Subject<Vector3> onShoot = new Subject<Vector3>();
-    public Body target;
+    public Subject<GunTarget> onShoot = new Subject<GunTarget>();
 
     public Bullet Prefab { get => prefab; }
 
@@ -19,15 +18,16 @@ public class Gun : MonoBehaviour
     void Start()
     {
         onShoot
-            .SampleFrame(frame)
-            .Subscribe(direction => {
+            .Sample(TimeSpan.FromMilliseconds(100 * frame))
+            .Subscribe(point => {
                 var bullet = Instantiate(Prefab, transform.position, transform.localRotation);
-                bullet.target = target;
+                bullet.target = point.target;
                 //ここらへんなかなかやばい
                 //layer + tag で認識するシステムの構築が必要
                 //bullet.gameObject.layer = 
-                transform.localRotation = Quaternion.Euler(0, 0, -Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg);
-                bullet.Rigidbody2D.velocity = transform.localRotation * Vector2.up * speed;
+                transform.localRotation = Quaternion.Euler(0, 0, DegreeFrom(point.direction));
+                var velocity = transform.localRotation * Vector2.up * speed;
+                bullet.Rigidbody2D.velocity = velocity + point.relativeSpeed;
             })
             .AddTo(this);
     }
@@ -37,4 +37,16 @@ public class Gun : MonoBehaviour
         //Debug.Log($"[Gun Icon] {prefab}");
         return Prefab?.GetComponent<SpriteRenderer>()?.sprite;
     }
+
+    private float DegreeFrom(Vector2 direction)
+    {
+        return -Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+    }
+}
+
+public class GunTarget
+{
+    public Vector3 direction;
+    public Body target;
+    public Vector3 relativeSpeed;
 }

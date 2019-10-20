@@ -62,6 +62,10 @@ public class SkillSlot : MonoBehaviour
         {
             GunManager.Instance.EquipGunToSelectedSlot(gunSkill.gun);
             MessageLog.Print($"[Equiped] {gunSkill.skillName}");
+
+            //test
+            var window = GetComponentInParent<Window>();
+            window.Close();
         }
     }
 

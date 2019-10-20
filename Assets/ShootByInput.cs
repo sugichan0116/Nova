@@ -8,6 +8,7 @@ public class ShootByInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var body = GetComponent<Rigidbody2D>();
         var guns = GetComponentsInChildren<Gun>();
 
         GunManager.Instance
@@ -24,7 +25,12 @@ public class ShootByInput : MonoBehaviour
                     foreach(var gun in guns)
                     {
                         var target = MouseCursole.Instance.position - transform.position;
-                        gun.onShoot.OnNext(target);
+                        var point = new GunTarget()
+                        {
+                            direction = target,
+                            relativeSpeed = body.velocity
+                        };
+                        gun.onShoot.OnNext(point);
                     }
                 }
             })

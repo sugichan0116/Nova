@@ -40,7 +40,7 @@ public class ClickManager : SingletonMonoBehaviour<ClickManager>
 
 
             case ClickMessage.ACTION_REPAIR:
-                Repair();
+                RepairSystem.Instance.Repair();
                 return;
             case ClickMessage.ACTION_UNLOCK_GUNSLOT:
                 GunManager.Instance.UnlockSlot();
@@ -62,19 +62,5 @@ public class ClickManager : SingletonMonoBehaviour<ClickManager>
             default:
                 return;
         }
-    }
-
-    //test gomi kuzu
-    public void Repair()
-    {
-        var body = Player.Instance.Body;
-        var needmoney = StoreManager.Instance.Get(StateProps.MONEY_TO_REPAIR);
-        var inventory = InventoryManager.Instance;
-
-        if (inventory.TryToPay(needmoney))
-        {
-            body.RepairDamage(body.LostHealth());
-        }
-        else MessageLog.Print("[Error] Lack of Gem...");
     }
 }
