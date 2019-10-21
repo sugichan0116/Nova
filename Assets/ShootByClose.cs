@@ -18,7 +18,7 @@ public class ShootByClose : MonoBehaviour
 
         Observable
             //.EveryFixedUpdate()
-            .Interval(TimeSpan.FromMilliseconds(100))
+            .Interval(TimeSpan.FromMilliseconds(100)) //yabai
             .Subscribe(_ => {
                 var target = Player.Instance.transform.position;
                 if (CanSee(target))
@@ -29,7 +29,8 @@ public class ShootByClose : MonoBehaviour
                         {
                             direction = target - transform.position,
                             target = Player.Instance.Body,
-                            relativeSpeed = Vector2.zero
+                            relativeSpeed = Vector2.zero,
+                            tag = this.tag,
                         };
 
                         gun.onShoot.OnNext(point);

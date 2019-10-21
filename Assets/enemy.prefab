@@ -65,9 +65,9 @@ GameObject:
   - component: {fileID: 8973323524333618462}
   - component: {fileID: -4260658788150001192}
   - component: {fileID: 6112407727468426148}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: enemy
-  m_TagString: Untagged
+  m_TagString: B:Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  shouldDestroy: 1
 --- !u!114 &8972341186926714887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 12
+  angleOfVisibility: 180
 --- !u!114 &172062894611376774
 MonoBehaviour:
   m_ObjectHideFlags: 0

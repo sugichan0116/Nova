@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Bullet
   - Projectile
+  - B:Enemy
+  - A:Player
+  - C:Neutral
   layers:
   - Default
   - TransparentFX
@@ -15,10 +18,10 @@ TagManager:
   - UI
   - 
   - 
-  - A
-  - A-Bullet
-  - B
-  - B-Bullet
+  - Body
+  - Bullet
+  - 
+  - 
   - 
   - 
   - 

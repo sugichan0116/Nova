@@ -15,16 +15,20 @@ namespace Nova
             var player = Player.Instance.GetComponent<Rigidbody2D>();
 
             collider
-                .OnTriggerStay2DAsObservable()
-                .Where(_ => player.velocity.magnitude < 10f)
+                .OnTriggerEnter2DAsObservable()
                 .Select(c => c.gameObject.GetComponent<Item>())
                 .Where(item => item != null)
                 .Subscribe(item =>
                 {
-                    //Debug.Log($"[Item Collector] {item}");
-                    var body = item.AttachedRigidbody;
-                    var direction = -(body.transform.position - transform.position);
-                    body.velocity = (Vector2)direction * (4f) + player.velocity;
+                    Observable
+                        .EveryFixedUpdate()
+                        .Where(_ => player.velocity.magnitude < 1f)
+                        .Take(1)
+                        .Subscribe(_ =>
+                        {
+                            item.Collect(player);
+                        })
+                        .AddTo(this);
                 })
                 .AddTo(this);
         }

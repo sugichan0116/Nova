@@ -19,7 +19,7 @@ public class Body : MonoBehaviour
     void Start()
     {
         residueHealth = health;
-
+        
         this
             .OnTriggerEnter2DAsObservable()
             .Subscribe(collider =>

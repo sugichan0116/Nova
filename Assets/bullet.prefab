@@ -157,8 +157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a5db2f715163042b688b1d37fa74ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 0}
   bomb: {fileID: 100002, guid: cafecd3fc3b761c45bb1553f35cf5c96, type: 3}
   damage: 25
+  target: {fileID: 0}
 --- !u!96 &-4256655600788450298
 TrailRenderer:
   serializedVersion: 2

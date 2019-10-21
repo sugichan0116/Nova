@@ -14,7 +14,7 @@ namespace Nova
 
         public override void OnApply(Body body)
         {
-            if (body.gameObject.layer != (int)DefinedLayer.PLAYER) return;
+            if (!body.CompareTag(TagManager.PLAYER)) return;
 
             Debug.Log($"[Money] get {volume} by {body} in {this}");
             onDestroy.OnNext(Unit.Default);

@@ -416,9 +416,9 @@ GameObject:
   - component: {fileID: 2216175606792413652}
   - component: {fileID: -4934299116097046844}
   - component: {fileID: 5810417955967918671}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: station
-  m_TagString: Untagged
+  m_TagString: B:Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -652,6 +652,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Anti-aircraft system (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+        type: 3}
+      propertyPath: m_TagString
+      value: B:Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -726,6 +731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Anti-aircraft system (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+        type: 3}
+      propertyPath: m_TagString
+      value: B:Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
         type: 3}
@@ -952,6 +962,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Anti-aircraft system (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+        type: 3}
+      propertyPath: m_TagString
+      value: B:Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1026,6 +1041,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Anti-aircraft system (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+        type: 3}
+      propertyPath: m_TagString
+      value: B:Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
         type: 3}
@@ -1162,6 +1182,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2589979966054042481, guid: 4f7f58b080cffa54faab56ebb1138406,
+        type: 3}
+      propertyPath: lotteryPerSecond
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589979966054042481, guid: 4f7f58b080cffa54faab56ebb1138406,
+        type: 3}
+      propertyPath: lotteryTimes
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2589979965905566424, guid: 4f7f58b080cffa54faab56ebb1138406,
         type: 3}
       propertyPath: m_Layer
@@ -1246,6 +1276,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589979966054042481, guid: 4f7f58b080cffa54faab56ebb1138406,
+        type: 3}
+      propertyPath: lotteryPerSecond
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589979966054042481, guid: 4f7f58b080cffa54faab56ebb1138406,
+        type: 3}
+      propertyPath: lotteryTimes
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2589979965905566424, guid: 4f7f58b080cffa54faab56ebb1138406,
         type: 3}
@@ -1332,6 +1372,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2589979966054042481, guid: 4f7f58b080cffa54faab56ebb1138406,
+        type: 3}
+      propertyPath: lotteryPerSecond
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589979966054042481, guid: 4f7f58b080cffa54faab56ebb1138406,
+        type: 3}
+      propertyPath: lotteryTimes
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2589979965905566424, guid: 4f7f58b080cffa54faab56ebb1138406,
         type: 3}
       propertyPath: m_Layer
@@ -1416,6 +1466,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589979966054042481, guid: 4f7f58b080cffa54faab56ebb1138406,
+        type: 3}
+      propertyPath: lotteryPerSecond
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589979966054042481, guid: 4f7f58b080cffa54faab56ebb1138406,
+        type: 3}
+      propertyPath: lotteryTimes
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2589979965905566424, guid: 4f7f58b080cffa54faab56ebb1138406,
         type: 3}
@@ -1591,6 +1651,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Anti-aircraft system (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+        type: 3}
+      propertyPath: m_TagString
+      value: B:Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
         type: 3}
@@ -1817,6 +1882,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Anti-aircraft system (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+        type: 3}
+      propertyPath: m_TagString
+      value: B:Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2042,6 +2112,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Anti-aircraft system (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+        type: 3}
+      propertyPath: m_TagString
+      value: B:Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2116,6 +2191,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Anti-aircraft system (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+        type: 3}
+      propertyPath: m_TagString
+      value: B:Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
         type: 3}
@@ -2267,6 +2347,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Anti-aircraft system (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+        type: 3}
+      propertyPath: m_TagString
+      value: B:Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2342,6 +2427,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Anti-aircraft system (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+        type: 3}
+      propertyPath: m_TagString
+      value: B:Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2416,6 +2506,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Anti-aircraft system (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+        type: 3}
+      propertyPath: m_TagString
+      value: B:Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
         type: 3}

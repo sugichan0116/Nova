@@ -28,7 +28,8 @@ public class ShootByInput : MonoBehaviour
                         var point = new GunTarget()
                         {
                             direction = target,
-                            relativeSpeed = body.velocity
+                            relativeSpeed = body.velocity,
+                            tag = this.tag,
                         };
                         gun.onShoot.OnNext(point);
                     }

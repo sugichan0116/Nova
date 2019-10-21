@@ -58,9 +58,9 @@ GameObject:
   - component: {fileID: 2589979966054042482}
   - component: {fileID: 2589979966054042481}
   - component: {fileID: 2589979966054042487}
-  m_Layer: 10
+  m_Layer: 16
   m_Name: Ladar
-  m_TagString: Untagged
+  m_TagString: B:Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

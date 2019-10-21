@@ -5,33 +5,15 @@ using UniRx;
 using UniRx.Triggers;
 using System;
 using System.Linq;
+using UnityEditorInternal;
+using NaughtyAttributes;
 
-public enum DefinedLayer
+public class TagManager
 {
-    PLAYER = 8,
-    PLAYER_BULLET = 9,
-    ENEMY = 10,
-    ENEMY_BULLET = 11,
-}
-
-public static partial class EnumExtend
-{
-    public static string GetTypeName(this DefinedLayer param)
-    {
-        switch (param)
-        {
-            case DefinedLayer.PLAYER:
-                return "A";
-            case DefinedLayer.PLAYER_BULLET:
-                return "A-Bullet";
-            case DefinedLayer.ENEMY:
-                return "B";
-            case DefinedLayer.ENEMY_BULLET:
-                return "B-Bullet";
-            default:
-                return null;
-        }
-    }
+    public static readonly string PLAYER = "A:Player";
+    public static readonly string ENEMY = "B:Enemy";
+    public static readonly string NEUTRAL = "C:Neutral";
+    public static string[] TAGS = new string[] { PLAYER, ENEMY, NEUTRAL };
 }
 
 public class ApproachLinear : MonoBehaviour
@@ -51,59 +33,76 @@ public class ApproachLinear : MonoBehaviour
     [SerializeField]
     private float rotateSpeed = 0.01f;
     [SerializeField]
-    private DefinedLayer layer;
+    [Dropdown("tags")] string targetTag;
+    private readonly string[] tags = TagManager.TAGS;
     private State state;
 
     // Start is called before the first frame update
     void Start()
     {
         var body = GetComponent<Rigidbody2D>();
+        Transform target = null;
 
         searhArea
-            .OnTriggerStay2DAsObservable()
-            .Where(c => c.gameObject.layer == (int)layer)
-            .Select(c => c.transform)
-            .Subscribe(target =>
+            .OnTriggerEnter2DAsObservable()
+            .Where(c => IsTarget(c.gameObject))
+            .Subscribe(c =>
             {
+                Debug.Log($"[Move AI] detected! {this}");
                 state = State.DETECT;
-
-                //Debug.Log($"[ApproachLinear] target:{target}, me:{searhArea}");
-                var distance = target.position - transform.position;
-                var velocity = Vector2.zero;
-                var direction = transform.rotation * 
-                Vector3.up * speed;
-
-                if (distance.magnitude > keepDistanceRadius)
-                {
-                    //Debug.Log($"[Keep distance] {distance.magnitude} > {keepDistanceRadius}");
-                    var r = Vector3.Cross(distance, direction).z;
-                    //body.AddTorque(100f * );
-                    velocity = Quaternion.Euler(0, 0, -rotateSpeed * r) * direction;//distance.normalized * speed;
-                }
-
-                body.velocity = velocity;
-
-                //TODO：見えている場合だけにしたいときはこれを実装
-                //if (Physics.Linecast(transform.position, target.position))
-                //{
-                //    Debug.Log("blocked");
-                //}
+                target = c.transform;
             })
             .AddTo(this);
 
         searhArea
             .OnTriggerExit2DAsObservable()
-            .Where(c => c.gameObject.layer == (int)layer)
+            .Where(c => IsTarget(c.gameObject))
             .Subscribe(_ =>
             {
                 state = State.IDLE;
+            })
+            .AddTo(this);
+
+        this.UpdateAsObservable()
+            .Where(_ => state == State.DETECT && target != null)
+            .Subscribe(_ =>
+            {
+                //Debug.Log($"[ApproachLinear] target:{target}, me:{searhArea}");
+                Vector2 velocity;
+                var distance = target.position - transform.position;
+
+                if (distance.magnitude > keepDistanceRadius)
+                {
+                    var direction = transform.rotation * Vector3.up * speed;
+                    var r = Vector3.Cross(distance, direction).z;
+                    velocity = Quaternion.Euler(0, 0, -rotateSpeed * r) * direction;
+                }
+                else
+                {
+                    velocity = Vector2.zero;
+                }
+
+                body.velocity = velocity;
+
             });
 
         this.UpdateAsObservable()
             .Where(_ => state == State.IDLE)
             .Subscribe(_ =>
             {
+                //?
                 body.velocity = Vector2.zero;
             });
     }
+
+    private bool IsTarget(GameObject obj)
+    {
+        return obj.tag == targetTag;
+    }
 }
+
+//TODO：見えている場合だけにしたいときはこれを実装
+//if (Physics.Linecast(transform.position, target.position))
+//{
+//    Debug.Log("blocked");
+//}

@@ -44,7 +44,14 @@ public class Bullet : BodyEffectableObject
 
     public override void OnApply(Body body)
     {
+        if (IsAlly(body.gameObject)) return;
+
         body.ReceiveDamage(Damage());
         onDestroy.OnNext(Unit.Default);
+    }
+
+    private bool IsAlly(GameObject obj)
+    {
+        return obj.CompareTag(tag);
     }
 }

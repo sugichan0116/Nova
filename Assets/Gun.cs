@@ -22,9 +22,7 @@ public class Gun : MonoBehaviour
             .Subscribe(point => {
                 var bullet = Instantiate(Prefab, transform.position, transform.localRotation);
                 bullet.target = point.target;
-                //ここらへんなかなかやばい
-                //layer + tag で認識するシステムの構築が必要
-                //bullet.gameObject.layer = 
+                bullet.tag = point.tag;
                 transform.localRotation = Quaternion.Euler(0, 0, DegreeFrom(point.direction));
                 var velocity = transform.localRotation * Vector2.up * speed;
                 bullet.Rigidbody2D.velocity = velocity + point.relativeSpeed;
@@ -49,4 +47,5 @@ public class GunTarget
     public Vector3 direction;
     public Body target;
     public Vector3 relativeSpeed;
+    public string tag;
 }

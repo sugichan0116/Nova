@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6280518348641404996}
   - component: {fileID: 6280518348641404997}
   - component: {fileID: 6280518348641404994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: '[DEBUG] counter'
-  m_TagString: Untagged
+  m_TagString: C:Neutral
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
