@@ -12,6 +12,8 @@ public class RotateForTarget : MonoBehaviour
     {
         bullet = bullet ?? GetComponent<Bullet>();
         var target = bullet.target;
+        if (target == null) return;
+
         var body = bullet.body;
         var r = Vector3.Cross(target.transform.position - transform.position, body.velocity).z;
         var rate = (1f + body.velocity.magnitude / 10f);

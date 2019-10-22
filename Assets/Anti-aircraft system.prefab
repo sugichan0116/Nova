@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8170641147369594522}
   - component: {fileID: 8170641147369594523}
-  m_Layer: 10
+  - component: {fileID: 53993893183529399}
+  - component: {fileID: 3161265539812488992}
+  m_Layer: 16
   m_Name: Anti-aircraft system
   m_TagString: B:Enemy
   m_Icon: {fileID: 0}
@@ -44,8 +46,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5843b6317bc2f41bf5a75a672e4c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ai: {fileID: 3161265539812488992}
   radius: 12
   angleOfVisibility: 360
+--- !u!58 &53993893183529399
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8170641147369594497}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 12
+--- !u!114 &3161265539812488992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8170641147369594497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4bbfd031e91414e91c8fe489ae120a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searhArea: {fileID: 53993893183529399}
+  personality: 1
 --- !u!1001 &8170641147577493993
 PrefabInstance:
   m_ObjectHideFlags: 0

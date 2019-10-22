@@ -7,6 +7,8 @@ using System;
 public class ShootByClose : MonoBehaviour
 {
     [SerializeField]
+    TargetDetector ai;
+    [SerializeField]
     float radius = 16f;
     [SerializeField]
     float angleOfVisibility = 180f;
@@ -15,22 +17,24 @@ public class ShootByClose : MonoBehaviour
     void Start()
     {
         var guns = GetComponentsInChildren<Gun>();
+        //var ai = get<ApproachLinear>();
 
         Observable
             //.EveryFixedUpdate()
             .Interval(TimeSpan.FromMilliseconds(100)) //yabai
             .Subscribe(_ => {
-                var target = Player.Instance.transform.position;
-                if (CanSee(target))
+                //var target = Player.Instance.transform.position;
+                var target = ai.Target;
+                if (target != null && CanSee(target.position))
                 {
                     foreach (var gun in guns)
                     {
                         var point = new GunTarget()
                         {
-                            direction = target - transform.position,
-                            target = Player.Instance.Body,
+                            direction = target.position - transform.position,
+                            target = target.GetComponent<Body>(),
                             relativeSpeed = Vector2.zero,
-                            tag = this.tag,
+                            tag = tag,
                         };
 
                         gun.onShoot.OnNext(point);

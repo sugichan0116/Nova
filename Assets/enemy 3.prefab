@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7369024949166369307}
   m_Layer: 16
   m_Name: search
-  m_TagString: Untagged
+  m_TagString: B:Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5843b6317bc2f41bf5a75a672e4c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ai: {fileID: 8973323524333618462}
   radius: 14
   angleOfVisibility: 240
 --- !u!114 &172062894611376774
@@ -260,10 +261,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   searhArea: {fileID: 7369024949166369307}
-  keepDistanceRadius: 4
+  personality: 1
   speed: 8
   rotateSpeed: 0.02
-  layer: 8
+  keepDistanceRadius: 4
 --- !u!114 &-4260658788150001192
 MonoBehaviour:
   m_ObjectHideFlags: 0
