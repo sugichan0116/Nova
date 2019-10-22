@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gun Skill 4
   m_EditorClassIdentifier: 
   skillName: Neutron Laser
-  gem: 12000
+  gem: 15000
   icon: {fileID: 0}
   gun: {fileID: 3792639052561062060, guid: 712af05c95c5bc64aa101fdd0d91d108, type: 3}
   tips: Experiment
