@@ -6,9 +6,14 @@ using System.Linq;
 using UniRx;
 using UniRx.Triggers;
 using System;
+using NaughtyAttributes;
 
 public class TriggerByCollider : MonoBehaviour
 {
+    //[Dropdown("Tags")]
+    //public string targetTag;
+    //private string[] Tags = TagManager.TAGS;
+
     public UnityEvent onFirst;
 
     // Start is called before the first frame update
@@ -18,9 +23,13 @@ public class TriggerByCollider : MonoBehaviour
 
         collider
             .OnTriggerEnter2DAsObservable()
+            //.Where(c => c.gameObject.tag == targetTag)
+            .Select(c => c.gameObject.GetComponent<Player>())
+            .Where(p => p != null)
             .Take(1)
-            .Subscribe(_ =>
+            .Subscribe(c =>
             {
+                //Debug.Log($"[Trigger] enter ({c.gameObject}){c.gameObject.tag} vs {targetTag}");
                 onFirst.Invoke();
             })
             .AddTo(this);

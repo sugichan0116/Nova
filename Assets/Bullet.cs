@@ -19,6 +19,7 @@ public class Bullet : BodyEffectableObject
     public GameObject bomb;
     public float damage;
     public Body target;
+    public bool shouldDestroy = true;
 
     public Rigidbody2D Rigidbody2D
     {
@@ -36,7 +37,7 @@ public class Bullet : BodyEffectableObject
             .Subscribe(_ =>
             {
                 Instantiate(bomb, transform.position, transform.rotation);
-                Destroy(gameObject);
+                if (shouldDestroy) Destroy(gameObject);
             });
     }
 
@@ -44,7 +45,7 @@ public class Bullet : BodyEffectableObject
 
     public override void OnApply(Body body)
     {
-        if (IsAlly(body.gameObject)) return;
+        if (RelationshipManager.IsFriend(body.tag, tag)) return;
 
         body.ReceiveDamage(Damage());
         onDestroy.OnNext(Unit.Default);

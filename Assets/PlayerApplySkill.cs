@@ -19,7 +19,7 @@ public class PlayerApplySkill : MonoBehaviour
                 GetComponent<MoveByInput>().speed += speed.speed;
                 return;
             case RegeneSkill regene:
-                GetComponent<RepairSystem>().regeneratorPerSecond += regene.regene;
+                GetComponent<RepairSystem>().AddRegenerator(regene.regene);
                 return;
         }
     }

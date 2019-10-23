@@ -114,6 +114,11 @@ public class RelationshipManager
         if (tagA != TagManager.NEUTRAL && tagB != TagManager.NEUTRAL) return Relation.ENEMY;
         return Relation.NEUTRAL;
     }
+
+    public static bool IsFriend(string tagA, string tagB)
+    {
+        return Compare(tagA, tagB) == Relation.FRIEND;
+    }
 }
 
 public enum Personality

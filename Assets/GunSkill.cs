@@ -29,7 +29,8 @@ public class GunSkill : Skill
             $"{Indent($"Damage {bullet.damage}")}\n" +
             $"{Indent($"Firing {60f * fps}-/min")}\n" +
             $"Speed {gun.speed}-km/sec\n" +
-            $"Range {gun.speed * time}-km\n";
+            $"Range {gun.speed * time}-km\n" +
+            ((bullet.shouldDestroy) ? "" : $"<color=green>[Skill] Penetration</color>");
     }
 
     public override string ToTips()

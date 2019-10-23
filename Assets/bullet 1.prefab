@@ -161,6 +161,7 @@ MonoBehaviour:
   bomb: {fileID: 100002, guid: cafecd3fc3b761c45bb1553f35cf5c96, type: 3}
   damage: 30
   target: {fileID: 0}
+  shouldDestroy: 0
 --- !u!96 &-4256655600788450298
 TrailRenderer:
   serializedVersion: 2

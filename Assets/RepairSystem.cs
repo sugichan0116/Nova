@@ -9,7 +9,9 @@ using System;
 public class RepairSystem : SingletonMonoBehaviour<RepairSystem>
 {
     [SerializeField]
-    public float regeneratorPerSecond;
+    private float regeneratorPerSecond;
+    [SerializeField]
+    private float moneyPerHealth = 2.5f;
 
     private void Start()
     {
@@ -24,15 +26,29 @@ public class RepairSystem : SingletonMonoBehaviour<RepairSystem>
             .AddTo(this);
     }
 
+    public float NeedMoneyToRepair()
+    {
+        var max = (int)(Player.Instance.Body.LostHealth() * moneyPerHealth);
+        var money = InventoryManager.Instance.Money;
+
+        return Mathf.Min(max, money);
+    }
+
+    public void AddRegenerator(float volume)
+    {
+        regeneratorPerSecond += volume;
+    }
+
     public void Repair()
     {
         var body = Player.Instance.Body;
-        var needmoney = StoreManager.Instance.Get(StateProps.MONEY_TO_REPAIR);
-        var inventory = InventoryManager.Instance;
+        var needmoney = NeedMoneyToRepair();
 
-        if (inventory.TryToPay(needmoney))
+        if (InventoryManager.Instance.TryToPay(needmoney))
         {
-            body.RepairDamage(body.LostHealth());
+            body.RepairDamage(body.LostHealth()); //やさしさ(全快)
+            
+            //body.RepairDamage(needmoney / moneyPerHealth); //現実
         }
     }
 }

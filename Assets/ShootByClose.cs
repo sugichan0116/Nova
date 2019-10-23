@@ -17,13 +17,10 @@ public class ShootByClose : MonoBehaviour
     void Start()
     {
         var guns = GetComponentsInChildren<Gun>();
-        //var ai = get<ApproachLinear>();
 
         Observable
-            //.EveryFixedUpdate()
             .Interval(TimeSpan.FromMilliseconds(100)) //yabai
             .Subscribe(_ => {
-                //var target = Player.Instance.transform.position;
                 var target = ai.Target;
                 if (target != null && CanSee(target.position))
                 {
@@ -48,9 +45,10 @@ public class ShootByClose : MonoBehaviour
     {
         var delta = target - transform.position;
         var front = transform.rotation * Vector3.up;
+        var sight = Mathf.Abs(DegreeFrom(front, delta));
 
         return delta.magnitude < radius //in range
-            && Mathf.Abs(DegreeFrom(front, delta)) <= angleOfVisibility / 2f//in sight
+            && sight <= angleOfVisibility / 2f//in sight
             ;
     }
 

@@ -17,7 +17,7 @@ public class StoreManager : SingletonMonoBehaviour<StoreManager>
             case StateProps.MONEY_HAVING:
                 return InventoryManager.Instance.Money;
             case StateProps.MONEY_TO_REPAIR:
-                return (int)(Player.Instance.Body.LostHealth() * 2.5f);
+                return RepairSystem.Instance.NeedMoneyToRepair();
             case StateProps.MONEY_TO_UNLOCK_GUNSLOT:
                 return GunManager.Instance.selectedSlot.needGem;
 
