@@ -1,47 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &694984009095749376
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5411409158074443349}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &5411409158074443349
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694984009095749376}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.1626697, y: -1.5898472, z: -46.473896}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1661777461640472608}
-  - {fileID: 201800773060323086}
-  - {fileID: 8848445550030612012}
-  - {fileID: 4895253409140497955}
-  - {fileID: 1931119227058805517}
-  - {fileID: 8863287215014270562}
-  - {fileID: 7793371070583754587}
-  - {fileID: 7679466762749591110}
-  - {fileID: 3958066703394823027}
-  - {fileID: 2065095974236991587}
-  - {fileID: 816133831318827272}
-  - {fileID: 325700014568552071}
-  m_Father: {fileID: 2216175606792413656}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1462634324388577832
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +394,7 @@ Transform:
   m_Children:
   - {fileID: 7983158739429976704}
   - {fileID: 6396926682970271518}
-  - {fileID: 5411409158074443349}
+  - {fileID: 8740535668953697279}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -637,155 +595,80 @@ Transform:
   m_Father: {fileID: 2216175606792413656}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &748523422514432248
+--- !u!1001 &305151219934664792
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 5411409158074443349}
+    m_TransformParent: {fileID: 2216175606792413656}
     m_Modifications:
-    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+    - target: {fileID: 2629500240368099847, guid: 87d3773118749dc4abffafc0de9942f4,
         type: 3}
       propertyPath: m_Name
-      value: Anti-aircraft system (5)
+      value: minimap icon waring 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+    - target: {fileID: 9038869086706488231, guid: 87d3773118749dc4abffafc0de9942f4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.38
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+    - target: {fileID: 9038869086706488231, guid: 87d3773118749dc4abffafc0de9942f4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+    - target: {fileID: 9038869086706488231, guid: 87d3773118749dc4abffafc0de9942f4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 46.473896
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+    - target: {fileID: 9038869086706488231, guid: 87d3773118749dc4abffafc0de9942f4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+    - target: {fileID: 9038869086706488231, guid: 87d3773118749dc4abffafc0de9942f4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+    - target: {fileID: 9038869086706488231, guid: 87d3773118749dc4abffafc0de9942f4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+    - target: {fileID: 9038869086706488231, guid: 87d3773118749dc4abffafc0de9942f4,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac, type: 3}
---- !u!4 &8863287215014270562 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-    type: 3}
-  m_PrefabInstance: {fileID: 748523422514432248}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &839935133855414454
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5411409158074443349}
-    m_Modifications:
-    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_Name
-      value: Anti-aircraft system (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 46.473896
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+    - target: {fileID: 9038869086706488231, guid: 87d3773118749dc4abffafc0de9942f4,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+    - target: {fileID: 9038869086706488231, guid: 87d3773118749dc4abffafc0de9942f4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+    - target: {fileID: 9038869086706488231, guid: 87d3773118749dc4abffafc0de9942f4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+    - target: {fileID: 9038869086706488231, guid: 87d3773118749dc4abffafc0de9942f4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac, type: 3}
---- !u!4 &8848445550030612012 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 87d3773118749dc4abffafc0de9942f4, type: 3}
+--- !u!4 &8740535668953697279 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
+  m_CorrespondingSourceObject: {fileID: 9038869086706488231, guid: 87d3773118749dc4abffafc0de9942f4,
     type: 3}
-  m_PrefabInstance: {fileID: 839935133855414454}
+  m_PrefabInstance: {fileID: 305151219934664792}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1209997274620748385
 PrefabInstance:
@@ -936,156 +819,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7422390509831426469, guid: f4eb6f17902e3154d81f285c4b0924f8,
     type: 3}
   m_PrefabInstance: {fileID: 1227812872997971537}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2013391058741502172
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5411409158074443349}
-    m_Modifications:
-    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_Name
-      value: Anti-aircraft system (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 46.473896
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac, type: 3}
---- !u!4 &7679466762749591110 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-    type: 3}
-  m_PrefabInstance: {fileID: 2013391058741502172}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2108933017729028545
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5411409158074443349}
-    m_Modifications:
-    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_Name
-      value: Anti-aircraft system (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 46.473896
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac, type: 3}
---- !u!4 &7793371070583754587 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-    type: 3}
-  m_PrefabInstance: {fileID: 2108933017729028545}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2216175605468927720
 PrefabInstance:
@@ -1348,81 +1081,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3434003658954760946}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &3642459781642404025
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5411409158074443349}
-    m_Modifications:
-    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_Name
-      value: Anti-aircraft system (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 46.473896
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac, type: 3}
---- !u!4 &4895253409140497955 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-    type: 3}
-  m_PrefabInstance: {fileID: 3642459781642404025}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3719052564467330982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1684,81 +1342,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5092548029883152356}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5156078858134472169
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5411409158074443349}
-    m_Modifications:
-    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_Name
-      value: Anti-aircraft system (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 46.473896
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac, type: 3}
---- !u!4 &3958066703394823027 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-    type: 3}
-  m_PrefabInstance: {fileID: 5156078858134472169}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5252816029508264702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1945,231 +1528,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5478277575608736919}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &7380312481395324602
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5411409158074443349}
-    m_Modifications:
-    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_Name
-      value: Anti-aircraft system
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 46.473896
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac, type: 3}
---- !u!4 &1661777461640472608 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-    type: 3}
-  m_PrefabInstance: {fileID: 7380312481395324602}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7759495870476961175
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5411409158074443349}
-    m_Modifications:
-    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_Name
-      value: Anti-aircraft system (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 46.473896
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac, type: 3}
---- !u!4 &1931119227058805517 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-    type: 3}
-  m_PrefabInstance: {fileID: 7759495870476961175}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7911490895858085625
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5411409158074443349}
-    m_Modifications:
-    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_Name
-      value: Anti-aircraft system (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 46.473896
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac, type: 3}
---- !u!4 &2065095974236991587 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-    type: 3}
-  m_PrefabInstance: {fileID: 7911490895858085625}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7971937486783357446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2355,229 +1713,4 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2589979966054042482, guid: 4f7f58b080cffa54faab56ebb1138406,
     type: 3}
   m_PrefabInstance: {fileID: 8064223806521277046}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8335884109063616916
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5411409158074443349}
-    m_Modifications:
-    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_Name
-      value: Anti-aircraft system (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 46.473896
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac, type: 3}
---- !u!4 &201800773060323086 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-    type: 3}
-  m_PrefabInstance: {fileID: 8335884109063616916}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8495737942366824477
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5411409158074443349}
-    m_Modifications:
-    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_Name
-      value: Anti-aircraft system (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 46.473896
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac, type: 3}
---- !u!4 &325700014568552071 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-    type: 3}
-  m_PrefabInstance: {fileID: 8495737942366824477}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8804695258270560146
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5411409158074443349}
-    m_Modifications:
-    - target: {fileID: 8170641147369594497, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_Name
-      value: Anti-aircraft system (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 46.473896
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac, type: 3}
---- !u!4 &816133831318827272 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8170641147369594522, guid: 8466fcc8f7e3cbe4ab7ada49974eaaac,
-    type: 3}
-  m_PrefabInstance: {fileID: 8804695258270560146}
   m_PrefabAsset: {fileID: 0}

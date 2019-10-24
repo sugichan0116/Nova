@@ -7,6 +7,8 @@ using UniRx.Triggers;
 
 public class MinimapMarker : MonoBehaviour
 {
+    public float effectiveDistance = float.PositiveInfinity;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +16,9 @@ public class MinimapMarker : MonoBehaviour
         var parent = transform.parent;
         var scaleOffset = transform.localScale;
 
-        Observable.EveryUpdate()
+        Observable
+            .EveryUpdate()
+            .Where(_ => (parent.position - manager.transform.position).magnitude <= effectiveDistance)
             .Subscribe(_ =>
             {
                 var position = manager.range.ClosestPoint(parent.position);
