@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d7e6e202c4bab4b983b4fa5ea1605f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 800
+  health: 1000
   shouldDestroy: 1
 --- !u!114 &8972341186926714887
 MonoBehaviour:
@@ -262,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   searhArea: {fileID: 7369024949166369307}
   personality: 1
+  warningTime: 6
   speed: 8
   rotateSpeed: 0.02
   keepDistanceRadius: 4
