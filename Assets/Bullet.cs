@@ -4,6 +4,7 @@ using UnityEngine;
 using UniRx;
 using System;
 using UniRx.Triggers;
+using UnityEngine.Events;
 
 public abstract class BodyEffectableObject : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class Bullet : BodyEffectableObject
     public float damage;
     public Body target;
     public bool shouldDestroy = true;
+
+    public UnityEvent onHit;
 
     public Rigidbody2D Rigidbody2D
     {
@@ -48,6 +51,7 @@ public class Bullet : BodyEffectableObject
         if (RelationshipManager.IsFriend(body.tag, tag)) return;
 
         body.ReceiveDamage(Damage());
+        onHit.Invoke();
         onDestroy.OnNext(Unit.Default);
     }
 

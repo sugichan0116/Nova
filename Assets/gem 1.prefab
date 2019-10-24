@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2803077058366145210}
   - component: {fileID: 2803077058366145204}
   - component: {fileID: 3571683423922826036}
+  - component: {fileID: 4503375712821350204}
   m_Layer: 16
   m_Name: gem 1
   m_TagString: Untagged
@@ -99,6 +100,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 1000
+  onGet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4503375712821350204}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!58 &2803077058366145205
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -161,6 +176,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4503375712821350204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2803077058366145214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdebc9df016f62445a9840e9e0e2837a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: eb29844b03df258489a10c01c6e51552, type: 3}
+  type: 0
+  volume: 1
+  isAttenuate: 1
 --- !u!1 &4456870304719703171
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,7 +30,8 @@ public class HealthBar : MonoBehaviour
                 text.text = body.HealthText();
 
                 var delta = body.NormalizedHealth() - slider.value;
-                slider.value += Mathf.Min(0.01f, Mathf.Abs(delta)) * Mathf.Sign(delta); 
+                //slider.value += Mathf.Min(0.01f, Mathf.Abs(delta)) * Mathf.Sign(delta);
+                slider.value = Mathf.Lerp(body.NormalizedHealth(), slider.value, 0.5f);
                 //body.NormalizedHealth();
             });
 
