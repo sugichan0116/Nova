@@ -25,7 +25,7 @@ public class MessageLog : SingletonMonoBehaviour<MessageLog>
         return text;
     }
 
-    private void Call(string text)
+    public void Call(string text)
     {
         text = ErrorText(text);
         Instantiate(message, transform).GetComponentInChildren<TextMeshProUGUI>().text = text;

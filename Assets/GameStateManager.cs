@@ -93,7 +93,7 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
         var slot = SaveSlotManager.Instance;
         if(slot != null)
         {
-            identifier = slot.SaveSlotPath();
+            identifier = slot.SaveDataPath();
         }
         else
         {
