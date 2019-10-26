@@ -15,7 +15,15 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
     public UnityEvent onPay;
 
     public IEnumerable<HoldingProduct> Items { get => items; }
-    public float Money { get => money; private set => money = value; }
+    public float Money
+    {
+        get => money;
+        set
+        {
+            Debug.Log($"[Money] set {value}");
+            money = value;
+        }
+    }
 
     public void EarnMoney(float volume)
     {
