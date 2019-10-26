@@ -12,6 +12,10 @@ using static BayatGames.SaveGameFree.SaveGameAuto;
 
 public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
 {
+    public const string SAVE_DIRECTORY = "Savedata/";
+    public const string DEFAULT_SLOT = "default";
+
+    [HideInInspector]
     public string identifier;
     public bool encode;
     public string encodePassword;
@@ -22,6 +26,19 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
     public SaveGamePath savePath = SaveGamePath.PersistentDataPath;
 
     private GameState gameState;
+
+    public GameState GameState
+    {
+        get
+        {
+            if (gameState == null)
+            {
+                gameState = new GameState();
+            }
+            return gameState;
+        }
+        private set => gameState = value;
+    }
 
     public Subject<Unit> onSave = new Subject<Unit>();
     public Subject<Unit> onLoad = new Subject<Unit>();
@@ -60,27 +77,35 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
         }
     }
 
-    public GameState GameState
+    private void UpdateIdentifier()
     {
-        get
+        var slot = SaveSlotManager.Instance;
+        if(slot != null)
         {
-            if(gameState == null)
+            if(string.IsNullOrEmpty(slot.identifier))
             {
-                gameState = new GameState();
+                identifier = SAVE_DIRECTORY + DEFAULT_SLOT;
             }
-            return gameState;
+            else
+            {
+                identifier = SAVE_DIRECTORY + slot.identifier;
+            }
         }
-        private set => gameState = value;
+        else
+        {
+            Debug.LogWarning($"[Save slot] can't load");
+        }
     }
 
     public void ExecuteSave()
     {
         Debug.Log($"[execute] save");
 
+        UpdateIdentifier();
         GameState = new GameState();
 
         onSaved
-            .Do(_ => Debug.Log($"[s]{_}"))
+            //.Do(_ => Debug.Log($"[s]{_}"))
             .Throttle(TimeSpan.FromSeconds(0.1f))
             .Take(1)
             .Subscribe(_ =>
@@ -104,8 +129,9 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
 
     public void ExecuteLoad()
     {
-        Debug.Log("[Manager] loaded");
+        Debug.Log($"[execute] load");
 
+        UpdateIdentifier();
         GameState = SaveGame.Load<GameState>(
                      identifier,
                      new GameState(),
@@ -115,7 +141,9 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
                      encoder,
                      encoding,
                      savePath);
+
         onLoad.OnNext(Unit.Default);
+        Debug.Log("[Manager] loaded");
     }
 
 
