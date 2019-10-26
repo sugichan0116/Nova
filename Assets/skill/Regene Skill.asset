@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91c7c706f38adbf40bda4c56da9f7bad, type: 3}
-  m_Name: Body Skill
+  m_Script: {fileID: 11500000, guid: cf6e73189f38dd043bbd6210a14dd313, type: 3}
+  m_Name: Regene Skill
   m_EditorClassIdentifier: 
-  skillName: Duralumin
-  gem: 3000
-  icon: {fileID: 21300000, guid: 3e4fcc84a0ac95b429c56452575f6021, type: 3}
-  health: 600
+  skillID: 400
+  skillName: Recovery System
+  gem: 6000
+  icon: {fileID: 21300000, guid: 411f88b287eb8504aa08edb04c1443c6, type: 3}
+  regene: 5

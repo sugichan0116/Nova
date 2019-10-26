@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Skill : ScriptableObject
 {
+    public int skillID;
     public string skillName;
     public float gem;
     public Sprite icon;

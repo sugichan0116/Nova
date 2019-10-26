@@ -12,7 +12,7 @@ namespace Nova
     {
         public override void OnApply(Body body)
         {
-            onDestroy.OnNext(Unit.Default);
+            OnDestroy.OnNext(Unit.Default);
             return;
         }
 
@@ -22,7 +22,7 @@ namespace Nova
             if (this == null) return;
             var ani = transform.DOMove(target.transform.position, 0.4f);
 
-            onDestroy
+            OnDestroy
                 .Subscribe(_ =>
                 {
                     ani.Kill();
@@ -32,7 +32,7 @@ namespace Nova
         // Start is called before the first frame update
         void Start()
         {
-            onDestroy
+            OnDestroy
                 .Subscribe(_ =>
                 {
                     Destroy(gameObject);

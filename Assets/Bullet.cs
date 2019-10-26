@@ -8,7 +8,18 @@ using UnityEngine.Events;
 
 public abstract class BodyEffectableObject : MonoBehaviour
 {
-    public Subject<Unit> onDestroy = new Subject<Unit>();
+    [NonSerialized]
+    private Subject<Unit> onDestroy = new Subject<Unit>();
+
+    public Subject<Unit> OnDestroy
+    {
+        get
+        {
+            if (onDestroy == null) onDestroy = new Subject<Unit>();
+            return onDestroy;
+        }
+        set => onDestroy = value;
+    }
 
     public abstract void OnApply(Body body);
 }
@@ -36,7 +47,7 @@ public class Bullet : BodyEffectableObject
     // Start is called before the first frame update
     void Start()
     {
-        onDestroy
+        OnDestroy
             .Subscribe(_ =>
             {
                 Instantiate(bomb, transform.position, transform.rotation);
@@ -52,7 +63,7 @@ public class Bullet : BodyEffectableObject
 
         body.ReceiveDamage(Damage());
         onHit.Invoke();
-        onDestroy.OnNext(Unit.Default);
+        OnDestroy.OnNext(Unit.Default);
     }
 
     private bool IsAlly(GameObject obj)

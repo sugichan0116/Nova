@@ -12,11 +12,9 @@ using static BayatGames.SaveGameFree.SaveGameAuto;
 
 public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
 {
-    public const string SAVE_DIRECTORY = "Savedata/";
-    public const string DEFAULT_SLOT = "default";
-
     [HideInInspector]
     public string identifier;
+    [Header("Settings")]
     public bool encode;
     public string encodePassword;
     public SaveFormat format = SaveFormat.JSON;
@@ -24,6 +22,9 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
     public ISaveGameEncoder encoder;
     public Encoding encoding;
     public SaveGamePath savePath = SaveGamePath.PersistentDataPath;
+
+    //[Header("Load")]
+    //public bool loadOnStart;
 
     private GameState gameState;
 
@@ -77,19 +78,22 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
         }
     }
 
+    private void Start()
+    {
+        var manager = SaveSlotManager.Instance;
+
+        if(manager.loadOnStart)
+        {
+            ExecuteLoad();
+        }
+    }
+
     private void UpdateIdentifier()
     {
         var slot = SaveSlotManager.Instance;
         if(slot != null)
         {
-            if(string.IsNullOrEmpty(slot.identifier))
-            {
-                identifier = SAVE_DIRECTORY + DEFAULT_SLOT;
-            }
-            else
-            {
-                identifier = SAVE_DIRECTORY + slot.identifier;
-            }
+            identifier = slot.SaveSlotPath();
         }
         else
         {
@@ -99,13 +103,12 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
 
     public void ExecuteSave()
     {
-        Debug.Log($"[execute] save");
-
         UpdateIdentifier();
+        Debug.Log($"[execute] save {identifier}");
+
         GameState = new GameState();
 
         onSaved
-            //.Do(_ => Debug.Log($"[s]{_}"))
             .Throttle(TimeSpan.FromSeconds(0.1f))
             .Take(1)
             .Subscribe(_ =>
@@ -129,9 +132,9 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
 
     public void ExecuteLoad()
     {
-        Debug.Log($"[execute] load");
-
         UpdateIdentifier();
+        Debug.Log($"[execute] load {identifier}");
+
         GameState = SaveGame.Load<GameState>(
                      identifier,
                      new GameState(),
@@ -177,7 +180,12 @@ public class GameState
 
     public PackageObject Load(string key)
     {
-        return book[key];
+        if(book.ContainsKey(key))
+        {
+            return book[key];
+        }
+
+        return null;
     }
 }
 

@@ -34,7 +34,7 @@ public class ShootByClose : MonoBehaviour
                             tag = tag,
                         };
 
-                        gun.onShoot.OnNext(point);
+                        gun.OnShoot.OnNext(point);
                     }
                 }
             })

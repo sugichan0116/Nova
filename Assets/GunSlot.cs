@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class GunSlot : MonoBehaviour
 {
+    public int slotID;
     private Gun gun;
     public bool isUnlocked;
     public float needGem;
+
+    public GunSkill skill;
+
+    private void Start()
+    {
+        EquipGun(skill);
+    }
 
     public Gun Gun
     {
@@ -22,7 +30,16 @@ public class GunSlot : MonoBehaviour
         }
     }
 
-    public void EquipGun(Gun gun)
+    public void EquipGun(GunSkill skill)
+    {
+        if (skill == null) return;
+
+        this.skill = skill;
+
+        EquipGun(skill.gun);
+    }
+
+    private void EquipGun(Gun gun)
     {
         if (!isUnlocked) return;
 

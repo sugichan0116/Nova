@@ -55,23 +55,12 @@ public class GunManager : SingletonMonoBehaviour<GunManager>
     [HideInInspector]
     public GunSlot selectedSlot;
 
-    public void EquipGun(Gun gunPrefab)
-    {
-        var slot = GetComponentsInChildren<GunSlot>()
-            .Where(s => s.Gun == null)
-            .FirstOrDefault();
-
-        if (slot == null) return;
-
-        EquipGunToSlot(gunPrefab, slot);
-    }
-
-    public void EquipGunToSelectedSlot(Gun gun)
+    public void EquipGunToSelectedSlot(GunSkill gun)
     {
         EquipGunToSlot(gun, selectedSlot);
     }
 
-    private void EquipGunToSlot(Gun gun, GunSlot slot)
+    public void EquipGunToSlot(GunSkill gun, GunSlot slot)
     {
         slot.EquipGun(gun);
         onEquiped.OnNext(Unit.Default);

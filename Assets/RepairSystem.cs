@@ -13,6 +13,16 @@ public class RepairSystem : SingletonMonoBehaviour<RepairSystem>
     [SerializeField]
     private float moneyPerHealth = 2.5f;
 
+    public float RegeneratorPerSecond
+    {
+        get => regeneratorPerSecond;
+        set
+        {
+            Debug.Log($"[Regene] set {regeneratorPerSecond} ({this})");
+            regeneratorPerSecond = value;
+        }
+    }
+
     private void Start()
     {
         var body = Player.Instance.Body;
@@ -21,7 +31,7 @@ public class RepairSystem : SingletonMonoBehaviour<RepairSystem>
             .EveryFixedUpdate()
             .Subscribe(_ =>
             {
-                body.RepairDamage(regeneratorPerSecond * Time.deltaTime);
+                body.RepairDamage(RegeneratorPerSecond * Time.deltaTime);
             })
             .AddTo(this);
     }
@@ -36,7 +46,7 @@ public class RepairSystem : SingletonMonoBehaviour<RepairSystem>
 
     public void AddRegenerator(float volume)
     {
-        regeneratorPerSecond += volume;
+        RegeneratorPerSecond += volume;
     }
 
     public void Repair()

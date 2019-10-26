@@ -31,7 +31,7 @@ public class ShootByInput : MonoBehaviour
                             relativeSpeed = body.velocity,
                             tag = this.tag,
                         };
-                        gun.onShoot.OnNext(point);
+                        gun.OnShoot.OnNext(point);
                     }
                 }
             })

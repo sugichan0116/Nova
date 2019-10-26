@@ -26,7 +26,16 @@ public class SkillSlot : MonoBehaviour
     private TextMeshProUGUI gemText;
 
     public bool CanUnlock { get => inheritance.Count == 0 || inheritance.All(s => s.IsUnlocked); }
-    public bool IsUnlocked { get => isUnlocked; }
+    public bool IsUnlocked
+    {
+        get => isUnlocked;
+        set
+        {
+            Debug.Log($"[Skill unlock] set ({this})");
+            isUnlocked = value;
+            Reflect();
+        }
+    }
     public Skill Skill { get => skill; }
 
     // Start is called before the first frame update
@@ -44,8 +53,8 @@ public class SkillSlot : MonoBehaviour
         {
             if (InventoryManager.Instance.TryToPay(Skill.gem))
             {
-                isUnlocked = true;
-                Reflect();
+                IsUnlocked = true;
+                //Reflect();
                 AchievementBox.Print("Unlocked", $"{Skill.skillName} is on Active!");
 
                 if((Skill is GunSkill) == false)
@@ -60,7 +69,7 @@ public class SkillSlot : MonoBehaviour
     {
         if(Skill is GunSkill gunSkill)
         {
-            GunManager.Instance.EquipGunToSelectedSlot(gunSkill.gun);
+            GunManager.Instance.EquipGunToSelectedSlot(gunSkill);
             MessageLog.Print($"[Equiped] {gunSkill.skillName}");
 
             //test

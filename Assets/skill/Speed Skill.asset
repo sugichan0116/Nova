@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884a08a9650f0684a8b53412a9e3cf0b, type: 3}
   m_Name: Speed Skill
   m_EditorClassIdentifier: 
+  skillID: 300
   skillName: Motor Engine
   gem: 21000
   icon: {fileID: 21300000, guid: 394b5b0edcab9644e883ef25893924dd, type: 3}

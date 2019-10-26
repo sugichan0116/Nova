@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6220b65b19e7e314c94644773abc686d, type: 3}
-  m_Name: Gun Skill 1
+  m_Script: {fileID: 11500000, guid: 91c7c706f38adbf40bda4c56da9f7bad, type: 3}
+  m_Name: Body Skill
   m_EditorClassIdentifier: 
-  skillName: Hydrogen Laser
+  skillID: 200
+  skillName: Duralumin
   gem: 3000
-  icon: {fileID: 0}
-  gun: {fileID: 3792639052561062060, guid: 93f3044d4e460f148bcf2380f3077a7d, type: 3}
-  tips: "\rHigh destructive power"
+  icon: {fileID: 21300000, guid: 3e4fcc84a0ac95b429c56452575f6021, type: 3}
+  health: 600

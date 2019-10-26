@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6220b65b19e7e314c94644773abc686d, type: 3}
-  m_Name: Gun Skill 4
+  m_Name: Gun Skill
   m_EditorClassIdentifier: 
-  skillName: Neutron Laser
-  gem: 15000
+  skillID: 100
+  skillName: Gun
+  gem: 0
   icon: {fileID: 0}
-  gun: {fileID: 3792639052561062060, guid: 712af05c95c5bc64aa101fdd0d91d108, type: 3}
-  tips: Experiment
+  gun: {fileID: 2781367249095684464, guid: b4c8dd96182e182408591d067fcc200b, type: 3}
+  tips: Simple, durable.

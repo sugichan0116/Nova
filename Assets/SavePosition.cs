@@ -9,7 +9,7 @@ public abstract class SavePort : MonoBehaviour
     private string key;
 
     // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
         var manager = GameStateManager.Instance;
 
@@ -25,7 +25,16 @@ public abstract class SavePort : MonoBehaviour
             .Subscribe(_ =>
             {
                 Debug.Log($"[Load] {key} ({this})");
-                Load(manager.Load(key));
+                var package = manager.Load(key);
+
+                if(package != null)
+                {
+                    Load(package);
+                }
+                else
+                {
+                    Debug.LogWarning($"[Load] key ({key}) was not exists");
+                }
             })
             .AddTo(this);
     }

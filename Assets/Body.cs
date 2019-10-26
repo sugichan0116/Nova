@@ -15,10 +15,21 @@ public class Body : MonoBehaviour
 
     public Subject<Unit> onDestroy = new Subject<Unit>();
 
+    public float Health {
+        get => health;
+        set
+        {
+            Debug.Log($"[Health] set {value} ({this})");
+            var lost = LostHealth();
+            health = value;
+            residueHealth = value - lost;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        residueHealth = health;
+        residueHealth = Health;
         
         this
             .OnTriggerEnter2DAsObservable()
@@ -53,25 +64,25 @@ public class Body : MonoBehaviour
     {
         residueHealth += volume;
 
-        if (residueHealth >= health)
-            residueHealth = health;
+        if (residueHealth >= Health)
+            residueHealth = Health;
     }
 
     public void ImproveHealth(float volume)
     {
-        health += volume;
+        Health += volume;
         residueHealth += volume;
     }
 
     public string HealthText()
     {
-        return $"{(int)residueHealth} / {(int)health}";
+        return $"{(int)residueHealth} / {(int)Health}";
     }
 
     public float NormalizedHealth()
     {
-        return residueHealth / health;
+        return residueHealth / Health;
     }
 
-    public float LostHealth() => health - residueHealth;
+    public float LostHealth() => Health - residueHealth;
 }

@@ -20,7 +20,7 @@ namespace Nova
 
             Debug.Log($"[Money] get {volume} by {body} in {this}");
             onGet.Invoke();
-            onDestroy.OnNext(Unit.Default);
+            OnDestroy.OnNext(Unit.Default);
             InventoryManager.Instance.EarnMoney(volume);
         }
 
@@ -29,7 +29,7 @@ namespace Nova
         {
             var generator = GetComponent<Generator>();
 
-            onDestroy
+            OnDestroy
                 .Subscribe(_ =>
                 {
                     generator.Instantiate();

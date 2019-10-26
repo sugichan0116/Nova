@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6220b65b19e7e314c94644773abc686d, type: 3}
-  m_Name: Gun Skill 5
+  m_Name: Gun Skill 3
   m_EditorClassIdentifier: 
-  skillName: Missile [Icarus]
-  gem: 36000
+  skillID: 103
+  skillName: Machine Gun
+  gem: 12000
   icon: {fileID: 0}
-  gun: {fileID: 3792639052561062060, guid: a4730972f612bc14790bce192b5e9784, type: 3}
-  tips: Long range attack, HiSpeed
+  gun: {fileID: 2781367249095684464, guid: 416ecbfc9b9937f4bbd2deea24c57cb9, type: 3}
+  tips: Gun x 3

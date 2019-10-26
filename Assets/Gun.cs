@@ -10,14 +10,24 @@ public class Gun : MonoBehaviour
     private Bullet prefab;
     public float speed;
     public int frame;
-    public Subject<GunTarget> onShoot = new Subject<GunTarget>();
+    [NonSerialized]
+    private Subject<GunTarget> onShoot;
 
     public Bullet Prefab { get => prefab; }
+    public Subject<GunTarget> OnShoot
+    {
+        get
+        {
+            if (onShoot == null) onShoot = new Subject<GunTarget>();
+            return onShoot;
+        }
+        set => onShoot = value;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        onShoot
+        OnShoot
             .Sample(TimeSpan.FromMilliseconds(100 * frame))
             .Subscribe(point => {
                 var bullet = Instantiate(Prefab, transform.position, transform.localRotation);
