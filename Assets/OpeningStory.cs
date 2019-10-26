@@ -12,33 +12,51 @@ public class OpeningStory : MonoBehaviour
 {
     [Multiline]
     public List<string> texts;
-    private int index;
-    private Text text;
     public UnityEvent onFinished;
     public UnityEvent onWaiting;
 
+    private int index;
+    private Text text;
+    private bool isPlaying = false;
+    private Sequence sequence;
 
     public void NextPage()
     {
+        if(isPlaying)
+        {
+            sequence.Kill();
+            text.text = texts[index - 1];
+            text.color = Color.white;
+            isPlaying = false;
+            return;
+        }
+
         if(texts.Count == index)
         {
             onFinished.Invoke();
+
+            index++;
         }
         else
         {
+            isPlaying = true;
             text = text ?? GetComponent<Text>();
             text.text = "";
-            var newText = texts[index];
-            text.DOText(newText, 0.08f * newText.Length)
-                .SetEase(Ease.Linear);
-            DOVirtual.DelayedCall(0.08f * newText.Length, () => {
-                onWaiting.Invoke();
-            });
             text.color = Color.clear;
-            text.DOColor(Color.white, 1.5f);
 
+            var newText = texts[index];
+            var time = 0.08f * newText.Length;
+
+            sequence = DOTween.Sequence();
+
+            sequence.Append(text.DOText(newText, time).SetEase(Ease.Linear));
+            sequence.Join(DOVirtual.DelayedCall(time, () => {
+                onWaiting.Invoke();
+                isPlaying = false;
+            }));
+            sequence.Join(text.DOColor(Color.white, Mathf.Min(1.5f, time)));
+
+            index++;
         }
-        
-        index++;
     }
 }

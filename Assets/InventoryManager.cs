@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using System.Linq;
+using UnityEngine.Events;
 
 public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
 {
@@ -10,6 +11,8 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
     private float money;
     [SerializeField]
     private List<HoldingProduct> items = new List<HoldingProduct>();
+
+    public UnityEvent onPay;
 
     public IEnumerable<HoldingProduct> Items { get => items; }
     public float Money { get => money; private set => money = value; }
@@ -24,6 +27,7 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
     {
         if (Money >= volume)
         {
+            onPay.Invoke();
             Money -= volume;
             return true;
         }

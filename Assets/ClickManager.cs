@@ -10,6 +10,8 @@ public class ClickManager : SingletonMonoBehaviour<ClickManager>
     public Window develop;
     public Window confirm_gunslot;
 
+    public AudioPlayer windowAudio, repairAudio, unlockAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,26 +25,33 @@ public class ClickManager : SingletonMonoBehaviour<ClickManager>
         switch(message)
         {
             case ClickMessage.AWAKE_MACHINESHOP:
+                windowAudio.Play();
                 machineshop.Open();
                 return;
             case ClickMessage.AWAKE_REPAIR:
+                windowAudio.Play();
                 repair.Open();
                 return;
             case ClickMessage.AWAKE_MARKET:
+                windowAudio.Play();
                 market.Open();
                 return;
             case ClickMessage.AWAKE_DEVELOP:
+                windowAudio.Play();
                 develop.Open();
                 return;
             case ClickMessage.AWAKE_SLOT_UNLOCK:
+                windowAudio.Play();
                 confirm_gunslot.Open();
                 return;
 
 
             case ClickMessage.ACTION_REPAIR:
+                repairAudio.Play();
                 RepairSystem.Instance.Repair();
                 return;
             case ClickMessage.ACTION_UNLOCK_GUNSLOT:
+                unlockAudio.Play();
                 GunManager.Instance.UnlockSlot();
                 return;
 

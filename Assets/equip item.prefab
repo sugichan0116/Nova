@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 3056273798092704199}
   - component: {fileID: 1057881838075284417}
   - component: {fileID: 4487528068508514686}
+  - component: {fileID: 6066383189514397679}
   m_Layer: 5
   m_Name: mask
   m_TagString: Untagged
@@ -214,6 +215,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6066383189514397679}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4487528068508514686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +239,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: 4
+--- !u!114 &6066383189514397679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4328660315380250437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdebc9df016f62445a9840e9e0e2837a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 65d61f9b9070ac34a99c2acfa192ce7f, type: 3}
+  type: 1
+  volume: 1
+  isAttenuate: 0
 --- !u!1 &7428189245247335267
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +497,7 @@ GameObject:
   - component: {fileID: 5185387021958809321}
   - component: {fileID: 341089902165296027}
   - component: {fileID: 3278463212329225207}
+  - component: {fileID: 2040961777141889755}
   m_Layer: 5
   m_Name: equip item
   m_TagString: Untagged
@@ -599,6 +628,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2040961777141889755}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &341089902165296027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,3 +667,19 @@ MonoBehaviour:
   slot: {fileID: 0}
   icon: {fileID: 2714402589145308374}
   mask: {fileID: 4328660315380250437}
+--- !u!114 &2040961777141889755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8288210277858858840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdebc9df016f62445a9840e9e0e2837a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 49e66bd60fe2d2e4880a55bf7e5b7708, type: 3}
+  type: 1
+  volume: 1
+  isAttenuate: 0

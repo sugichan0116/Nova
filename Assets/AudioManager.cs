@@ -30,7 +30,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
         {
             var distance = (player.transform.position - Listener.position).magnitude;
             volume *= Mathf.Clamp01(1f - distance / attenuationDistance);
-            Debug.Log($"[Audio] {volume}");
+            //Debug.Log($"[Audio] {volume}");
         }
 
         switch (player.type)
@@ -44,7 +44,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
                 return;
 
             case AudioPlayer.AudioMixerType.BGM:
-                EazySoundManager.PlayMusic(player.clip, volume);
+                EazySoundManager.PlayMusic(player.clip, volume, true, true);
                 return;
         }
     }

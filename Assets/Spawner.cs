@@ -7,7 +7,12 @@ using System;
 using System.Linq;
 using Random = UnityEngine.Random;
 
-public class Spawner : MonoBehaviour
+public interface IReflesh
+{
+    void Reflesh();
+}
+
+public class Spawner : MonoBehaviour, IReflesh
 {
     [SerializeField]
     float lotteryPerSecond = 1f;

@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdebc9df016f62445a9840e9e0e2837a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 138ca79e8dc41ed4395011cdf48ff781, type: 3}
+  clip: {fileID: 8300000, guid: 7c07364c897532e47bfb28a1b8f35fc2, type: 3}
   type: 0
   volume: 1
   isAttenuate: 1
