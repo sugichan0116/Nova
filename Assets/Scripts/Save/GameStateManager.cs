@@ -15,7 +15,6 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
     [HideInInspector]
     public string identifier;
 
-    [Header("Settings")]
     public SaveSetting setting;
 
     private GameState gameState;
@@ -33,6 +32,8 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
         private set => gameState = value;
     }
 
+    public UnityEvent onAutoLoad;
+
     public Subject<Unit> onSave = new Subject<Unit>();
     public Subject<Unit> onLoad = new Subject<Unit>();
     public Subject<Unit> onSaved = new Subject<Unit>();
@@ -42,6 +43,7 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
         if(SaveSlotManager.Instance.LoadOnStart)
         {
             ExecuteLoad();
+            onAutoLoad.Invoke();
         }
     }
 

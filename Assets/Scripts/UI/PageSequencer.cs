@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using System.Linq;
+using UnityEngine.Events;
 
 public class PageSequencer : MonoBehaviour
 {
     [ReorderableList]
     public List<PageContent> pages;
+
+    public UnityEvent onFinish;
+
     public bool isLoop = false;
     public int index;
 
@@ -15,6 +19,13 @@ public class PageSequencer : MonoBehaviour
     public void NextPage()
     {
         index++;
+        if(index == pages.Count)
+        {
+            if (isLoop) index = 0;
+            else index--;
+
+            onFinish.Invoke();
+        }
         UpdatePages();
     }
 
@@ -22,13 +33,16 @@ public class PageSequencer : MonoBehaviour
     public void BackPage()
     {
         index--;
+        if (index == -1)
+        {
+            if (isLoop) index = pages.Count - 1;
+            else index++;
+        }
         UpdatePages();
     }
 
     private void UpdatePages()
     {
-        index = (index + pages.Count) % pages.Count; //ここゴミ mathf.clamp????
-
         int n = 0;
         foreach (var page in pages)
         {
