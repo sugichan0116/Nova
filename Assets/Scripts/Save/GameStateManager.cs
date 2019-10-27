@@ -14,14 +14,9 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
 {
     [HideInInspector]
     public string identifier;
+
     [Header("Settings")]
-    public bool encode;
-    public string encodePassword;
-    public SaveFormat format = SaveFormat.JSON;
-    public ISaveGameSerializer serializer;
-    public ISaveGameEncoder encoder;
-    public Encoding encoding;
-    public SaveGamePath savePath = SaveGamePath.PersistentDataPath;
+    public SaveSetting setting;
 
     private GameState gameState;
 
@@ -41,39 +36,6 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
     public Subject<Unit> onSave = new Subject<Unit>();
     public Subject<Unit> onLoad = new Subject<Unit>();
     public Subject<Unit> onSaved = new Subject<Unit>();
-
-    protected virtual void Awake()
-    {
-        if (string.IsNullOrEmpty(encodePassword))
-        {
-            encodePassword = SaveGame.EncodePassword;
-        }
-        if (serializer == null)
-        {
-            serializer = SaveGame.Serializer;
-        }
-        if (encoder == null)
-        {
-            encoder = SaveGame.Encoder;
-        }
-        if (encoding == null)
-        {
-            encoding = SaveGame.DefaultEncoding;
-        }
-
-        switch (format)
-        {
-            case SaveFormat.Binary:
-                serializer = new SaveGameBinarySerializer();
-                break;
-            case SaveFormat.JSON:
-                serializer = new SaveGameJsonSerializer();
-                break;
-            case SaveFormat.XML:
-                serializer = new SaveGameXmlSerializer();
-                break;
-        }
-    }
 
     private void Start()
     {
@@ -112,12 +74,12 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
                 SaveGame.Save<GameState>(
                     identifier,
                     GameState,
-                    encode,
-                    encodePassword,
-                    serializer,
-                    encoder,
-                    encoding,
-                    savePath);
+                    setting.Encode,
+                    setting.EncodePassword,
+                    setting.Serializer,
+                    setting.Encoder,
+                    setting.Encoding,
+                    setting.SavePath);
             })
             .AddTo(this);
 
@@ -131,14 +93,14 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
         Debug.Log($"[execute] load {identifier}");
 
         GameState = SaveGame.Load<GameState>(
-                     identifier,
-                     new GameState(),
-                     encode,
-                     encodePassword,
-                     serializer,
-                     encoder,
-                     encoding,
-                     savePath);
+                    identifier,
+                    new GameState(),
+                    setting.Encode,
+                    setting.EncodePassword,
+                    setting.Serializer,
+                    setting.Encoder,
+                    setting.Encoding,
+                    setting.SavePath);
 
         onLoad.OnNext(Unit.Default);
         Debug.Log("[Manager] loaded");

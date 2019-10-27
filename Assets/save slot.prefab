@@ -368,6 +368,7 @@ GameObject:
   - component: {fileID: 6450651492945471328}
   - component: {fileID: 6450651492945471335}
   - component: {fileID: 6450651492945471334}
+  - component: {fileID: 3543590077463308275}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -415,7 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.74105555, g: 0.80135787, b: 0.8584906, a: 1}
+  m_Color: {r: 0.8490566, g: 0.31378782, b: 0.30838373, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -484,6 +485,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3543590077463308275}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3543590077463308275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6450651492945471332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdebc9df016f62445a9840e9e0e2837a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: ff9c732995023ad40a6a8730d343fddc, type: 3}
+  type: 1
+  volume: 1
+  isAttenuate: 0
 --- !u!1 &6450651493137320197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,6 +1061,7 @@ MonoBehaviour:
   identifier: 
   title: {fileID: 6450651492578157263}
   sub: {fileID: 6450651493421243198}
+  detail: {fileID: 6450651493137320199}
   onLoad:
     m_PersistentCalls:
       m_Calls:

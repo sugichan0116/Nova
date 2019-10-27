@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using System;
 
 public class SaveSlotManager : EnvironmentMonoBehaviour<SaveSlotManager>
 {
@@ -39,7 +40,8 @@ public class SaveSlotManager : EnvironmentMonoBehaviour<SaveSlotManager>
     private string NewSaveDataName()
     {
         var names = SaveDataReader.ReadSaveDataName();
-        return $"save{names.Count()}";
+        return $"save{DateTime.Now.ToString("yyyyMMddhhmmss")}";
+        //return $"save{DateTime.Now.GetHashCode()}";
     }
 
     private string CurrentSaveDataPath()
@@ -52,7 +54,7 @@ public class SaveSlotManager : EnvironmentMonoBehaviour<SaveSlotManager>
 public class SaveDataReader
 {
     public const string SAVE_DIRECTORY = "Savedata/";
-    public const string DEFAULT_SLOT = "default";
+    //public const string DEFAULT_SLOT = "default";
     public const string EXTEND = ".data";
 
     public static string SaveDataPathFrom(string name)
@@ -68,7 +70,6 @@ public class SaveDataReader
     public static IEnumerable<FileInfo> ReadSaveData()
     {
         var path = $"{Application.dataPath}/{SAVE_DIRECTORY}";
-        Debug.Log($"[Read] save data {path}");
 
         DirectoryInfo dir = new DirectoryInfo(path);
         return dir.GetFiles($"*{EXTEND}");
