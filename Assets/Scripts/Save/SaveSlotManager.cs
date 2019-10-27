@@ -71,6 +71,7 @@ public class SaveDataReader
     {
         var path = $"{Application.dataPath}/{SAVE_DIRECTORY}";
 
+        SafeCreateDirectory(path);
         DirectoryInfo dir = new DirectoryInfo(path);
         return dir.GetFiles($"*{EXTEND}");
     }
@@ -83,5 +84,18 @@ public class SaveDataReader
             return path;
         }
         return path.Replace(extension, string.Empty);
+    }
+    
+    /// <summary>
+     /// 指定したパスにディレクトリが存在しない場合
+     /// すべてのディレクトリとサブディレクトリを作成します
+     /// </summary>
+    public static DirectoryInfo SafeCreateDirectory(string path)
+    {
+        if (Directory.Exists(path))
+        {
+            return null;
+        }
+        return Directory.CreateDirectory(path);
     }
 }
