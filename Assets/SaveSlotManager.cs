@@ -6,28 +6,23 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
-public class SaveSlotManager : SingletonMonoBehaviour<SaveSlotManager>
+public class SaveSlotManager : EnvironmentMonoBehaviour<SaveSlotManager>
 {
-    public const string SAVE_DIRECTORY = "Savedata/";
-    public const string DEFAULT_SLOT = "default";
-    public const string EXTEND = ".data";
+    private string identifier;
+    private bool loadOnStart;
 
-    public string identifier;
-    public UnityEvent onSelect;
+    public bool LoadOnStart { get => loadOnStart; private set => loadOnStart = value; }
 
-    [Header("Load")]
-    public bool loadOnStart;
-
-    // Start is called before the first frame update
-    void Start()
+    public void SetBlankIdentifier()
     {
-        DontDestroyOnLoad(this.gameObject);
+        identifier = "";
+        LoadOnStart = false;
     }
 
-    public void Identifier(string _identifier)
+    public void SetIdentifier(string _identifier)
     {
         identifier = _identifier;
-        onSelect.Invoke();
+        LoadOnStart = true;
     }
 
     public string SaveDataPath()
@@ -40,33 +35,45 @@ public class SaveSlotManager : SingletonMonoBehaviour<SaveSlotManager>
         return CurrentSaveDataPath();
     }
 
-    public IEnumerable<string> ReadSaveDataName()
+
+    private string NewSaveDataName()
+    {
+        var names = SaveDataReader.ReadSaveDataName();
+        return $"save{names.Count()}";
+    }
+
+    private string CurrentSaveDataPath()
+    {
+        return SaveDataReader.SaveDataPathFrom(identifier);
+    }
+    
+}
+
+public class SaveDataReader
+{
+    public const string SAVE_DIRECTORY = "Savedata/";
+    public const string DEFAULT_SLOT = "default";
+    public const string EXTEND = ".data";
+
+    public static string SaveDataPathFrom(string name)
+    {
+        return $"{SAVE_DIRECTORY}{name}{EXTEND}";
+    }
+
+    public static IEnumerable<string> ReadSaveDataName()
     {
         return ReadSaveData().Select(f => GetPathWithoutExtension(f.Name));
     }
 
-    public IEnumerable<FileInfo> ReadSaveData()
+    public static IEnumerable<FileInfo> ReadSaveData()
     {
         var path = $"{Application.dataPath}/{SAVE_DIRECTORY}";
-        Debug.Log($"[Read] save data {path} ({this})");
+        Debug.Log($"[Read] save data {path}");
 
         DirectoryInfo dir = new DirectoryInfo(path);
         return dir.GetFiles($"*{EXTEND}");
     }
 
-
-    private string NewSaveDataName()
-    {
-        var names = ReadSaveDataName();
-        return $"save{names.Count()}"; 
-        //$"{SAVE_DIRECTORY}save{names.Count()}{EXTEND}";
-    }
-
-    private string CurrentSaveDataPath()
-    {
-        return SAVE_DIRECTORY + identifier + EXTEND;
-    }
-    
     public static string GetPathWithoutExtension(string path)
     {
         var extension = Path.GetExtension(path);

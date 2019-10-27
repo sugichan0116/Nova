@@ -23,9 +23,6 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
     public Encoding encoding;
     public SaveGamePath savePath = SaveGamePath.PersistentDataPath;
 
-    //[Header("Load")]
-    //public bool loadOnStart;
-
     private GameState gameState;
 
     public GameState GameState
@@ -80,9 +77,7 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
 
     private void Start()
     {
-        var manager = SaveSlotManager.Instance;
-
-        if(manager.loadOnStart)
+        if(SaveSlotManager.Instance.LoadOnStart)
         {
             ExecuteLoad();
         }
@@ -90,15 +85,15 @@ public class GameStateManager : SingletonMonoBehaviour<GameStateManager>
 
     private void UpdateIdentifier()
     {
-        var slot = SaveSlotManager.Instance;
-        if(slot != null)
-        {
-            identifier = slot.SaveDataPath();
-        }
-        else
+        var manager = SaveSlotManager.Instance;
+
+        if (manager == null)
         {
             Debug.LogWarning($"[Save slot] can't load");
+            return;
         }
+
+        identifier = manager.SaveDataPath();
     }
 
     public void ExecuteSave()

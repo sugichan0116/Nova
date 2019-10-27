@@ -22,7 +22,7 @@ public class SaveData : MonoBehaviour
 
     public void Load()
     {
-        SaveSlotManager.Instance.Identifier(identifier);
+        SaveSlotManager.Instance.SetIdentifier(identifier);
         onLoad.Invoke();
     }
 

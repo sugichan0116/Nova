@@ -16,7 +16,7 @@ public class SaveSlotReader : MonoBehaviour
 
     public void ReadSaveData()
     {
-        var info = SaveSlotManager.Instance.ReadSaveData();
+        var info = SaveDataReader.ReadSaveData();
 
         if (info.Count() == 0) return;
 
@@ -25,7 +25,7 @@ public class SaveSlotReader : MonoBehaviour
         {
             Debug.Log($"[SaveData] {file}");
             var savedata = Instantiate(prefab, transform);
-            var filename = SaveSlotManager.GetPathWithoutExtension(file.Name);
+            var filename = SaveDataReader.GetPathWithoutExtension(file.Name);
             savedata.identifier = filename;
             savedata.info = file;
         }
