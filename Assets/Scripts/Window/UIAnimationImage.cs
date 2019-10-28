@@ -17,7 +17,8 @@ public class UIAnimationImage : UIAnimation
 
         image
             .DOColor(defaultColor, during)
-            .SetEase(inEase);
+            .SetEase(inEase)
+            .SetUpdate(true);
 
         return during;
     }
@@ -28,7 +29,8 @@ public class UIAnimationImage : UIAnimation
 
         image
             .DOColor(color, during)
-            .SetEase(outEase);
+            .SetEase(outEase)
+            .SetUpdate(true);
 
         return during;
     }

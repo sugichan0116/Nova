@@ -7,6 +7,7 @@ using UniRx;
 using UniRx.Triggers;
 using System;
 using System.Linq;
+using DG.Tweening;
 
 public class AchievementBox : SingletonMonoBehaviour<AchievementBox>
 {
@@ -34,15 +35,7 @@ public class AchievementBox : SingletonMonoBehaviour<AchievementBox>
 
                 var onClose = box.onClose.AsObservable().Select(_ => (long)0);
 
-                Observable
-                    .Timer(TimeSpan.FromSeconds(during))
-                    .Amb(onClose)
-                    .Take(1)
-                    .Subscribe(_ =>
-                    {
-                        box.Close();
-                    })
-                    .AddTo(this);
+                DOVirtual.DelayedCall(during, () => box.Close(), true);
             })
             .AddTo(this);
     }

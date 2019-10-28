@@ -45,7 +45,7 @@ public class OpeningStory : MonoBehaviour
             text.color = Color.clear;
 
             var newText = texts[index];
-            var time = 0.08f * newText.Length;
+            var time = 0.04f * newText.Length;
 
             sequence = DOTween.Sequence();
 
@@ -57,6 +57,14 @@ public class OpeningStory : MonoBehaviour
             sequence.Join(text.DOColor(Color.white, Mathf.Min(1.5f, time)));
 
             index++;
+        }
+    }
+
+    public void SkipPage()
+    {
+        if (texts.Count != index)
+        {
+            onFinished.Invoke();
         }
     }
 }

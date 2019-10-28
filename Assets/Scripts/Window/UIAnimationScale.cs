@@ -16,7 +16,8 @@ public class UIAnimationScale : UIAnimation
 
         transform
             .DOScale(defaultScale, during)
-            .SetEase(inEase);
+            .SetEase(inEase)
+            .SetUpdate(true);
 
         return during;
     }
@@ -27,7 +28,8 @@ public class UIAnimationScale : UIAnimation
 
         transform
             .DOScale(startScale, during)
-            .SetEase(outEase);
+            .SetEase(outEase)
+            .SetUpdate(true);
 
         return during;
     }

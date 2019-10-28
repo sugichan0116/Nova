@@ -19,7 +19,8 @@ public class UIAnimationRotate : UIAnimation
         transform
             .DOLocalRotate(rotate, during)
             .SetRelative()
-            .SetEase(outEase);
+            .SetEase(outEase)
+            .SetUpdate(true);
 
         return during;
     }
@@ -31,7 +32,8 @@ public class UIAnimationRotate : UIAnimation
         transform
             .DOLocalRotate(-rotate, during)
             .SetRelative()
-            .SetEase(inEase);
+            .SetEase(inEase)
+            .SetUpdate(true);
 
         return during;
     }

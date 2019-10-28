@@ -27,7 +27,8 @@ public class UIAnimationSlide : UIAnimation
 
         transform
             .DOLocalMove(defaultPosition, during)
-            .SetEase(inEase);
+            .SetEase(inEase)
+            .SetUpdate(true);
 
         return during;
     }
@@ -38,7 +39,8 @@ public class UIAnimationSlide : UIAnimation
 
         transform
             .DOLocalMove(position, during)
-            .SetEase(outEase);
+            .SetEase(outEase)
+            .SetUpdate(true);
 
         return during;
     }

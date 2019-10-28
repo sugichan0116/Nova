@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UniRx;
@@ -9,6 +10,7 @@ public class Toast : MonoBehaviour
 {
     public UnityEvent onStart;
     public float during;
+    public bool ignoreTimeScale;
     public UnityEvent onEnd;
 
     // Start is called before the first frame update
@@ -16,12 +18,6 @@ public class Toast : MonoBehaviour
     {
         onStart.Invoke();
 
-        Observable
-            .Timer(TimeSpan.FromSeconds(during))
-            .Subscribe(_ =>
-            {
-                onEnd.Invoke();
-            })
-            .AddTo(this);
+        DOVirtual.DelayedCall(during, () => onEnd.Invoke(), ignoreTimeScale);
     }
 }

@@ -311,6 +311,7 @@ MonoBehaviour:
   onClose:
     m_PersistentCalls:
       m_Calls: []
+  shouldPause: 0
   animations:
   - {fileID: 83047505524547296}
 --- !u!114 &4496150497856265336
@@ -340,6 +341,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   during: 4
+  ignoreTimeScale: 1
   onEnd:
     m_PersistentCalls:
       m_Calls:
